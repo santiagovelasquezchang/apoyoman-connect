@@ -1,26 +1,24 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
-
-const footerLinks = {
-  company: [
-    { name: "About Us", href: "/about" },
-    { name: "Our Team", href: "/about#team" },
-    { name: "Careers", href: "/contact" },
-  ],
-  services: [
-    { name: "Financial Management", href: "/services#finance" },
-    { name: "HR Outsourcing", href: "/services#hr" },
-    { name: "Payroll Services", href: "/services#payroll" },
-    { name: "Compliance", href: "/services#compliance" },
-  ],
-  resources: [
-    { name: "Case Studies", href: "/experience" },
-    { name: "Contact Us", href: "/contact" },
-  ],
-};
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
+
+  const footerLinks = {
+    company: [
+      { name: t("nav.about"), href: "/about" },
+      { name: t("aboutPage.teamBadge"), href: "/about#team" },
+      { name: t("nav.contact"), href: "/contact" },
+    ],
+    services: [
+      { name: t("footer.service1"), href: "/services#finance" },
+      { name: t("footer.service2"), href: "/services#hr" },
+      { name: t("footer.service3"), href: "/services#payroll" },
+      { name: t("footer.service4"), href: "/services#compliance" },
+    ],
+  };
 
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -35,7 +33,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-primary-foreground/80 text-sm leading-relaxed mb-6">
-              Trusted B2B partner for oil and gas companies. Expert financial management and HR outsourcing solutions since establishment.
+              {t("footer.description")}
             </p>
             <div className="flex gap-4">
               <a
@@ -62,7 +60,7 @@ export function Footer() {
           {/* Company Links */}
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider mb-4">
-              Company
+              {t("footer.quickLinks")}
             </h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
@@ -81,7 +79,7 @@ export function Footer() {
           {/* Services Links */}
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider mb-4">
-              Services
+              {t("footer.services")}
             </h4>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
@@ -100,7 +98,7 @@ export function Footer() {
           {/* Contact Info */}
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider mb-4">
-              Contact
+              {t("footer.contact")}
             </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
@@ -136,7 +134,7 @@ export function Footer() {
         <div className="py-6 border-t border-primary-foreground/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-primary-foreground/60">
-              © {currentYear} APOYOMAN. All rights reserved.
+              © {currentYear} APOYOMAN. {t("footer.rights")}
             </p>
             <div className="flex gap-6">
               <Link

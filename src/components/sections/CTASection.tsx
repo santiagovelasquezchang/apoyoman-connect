@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function CTASection() {
+  const { t } = useLanguage();
+
   return (
     <section className="section-padding gradient-overlay relative overflow-hidden">
       {/* Decorative blobs */}
@@ -16,11 +19,10 @@ export function CTASection() {
           <div className="w-20 h-1 bg-accent rounded-full mx-auto mb-8" />
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
-            Ready to Streamline Your Operations?
+            {t("cta.title")}
           </h2>
           <p className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Let's discuss how APOYOMAN can help your oil & gas company 
-            achieve operational excellence through expert financial and HR management.
+            {t("cta.description")}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
@@ -30,7 +32,7 @@ export function CTASection() {
               className="bg-accent text-accent-foreground hover:bg-accent/90 text-base rounded-2xl px-10 h-14 soft-shadow-accent transition-all hover:scale-105"
             >
               <Link to="/contact">
-                Get Started Today
+                {t("cta.button")}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -42,7 +44,7 @@ export function CTASection() {
             >
               <a href="tel:+1234567890">
                 <Phone className="mr-2 h-5 w-5" />
-                Call Us Now
+                {t("cta.call")}
               </a>
             </Button>
           </div>

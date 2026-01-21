@@ -2,10 +2,11 @@ import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { ArrowRight, Award, Users, Globe, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const stats = [
-  { value: "15+", label: "Years in Business" },
-  { value: "50+", label: "Energy Clients" },
+  { value: "15+", labelKey: "hero.stat1.label" },
+  { value: "50+", labelKey: "hero.stat2.label" },
   { value: "$2B+", label: "Managed Budgets" },
   { value: "5,000+", label: "Employees Supported" },
 ];
@@ -74,22 +75,22 @@ const testimonials = [
 ];
 
 export default function Experience() {
+  const { t } = useLanguage();
+
   return (
     <Layout>
       {/* Hero Section */}
       <section className="pt-24 pb-16 md:pt-32 md:pb-20 gradient-overlay">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-            Our Experience
+            {t("experiencePage.badge")}
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-            15+ Years of{" "}
-            <span className="text-accent">Proven Excellence</span>
+            {t("experiencePage.title")}{" "}
+            <span className="text-accent">{t("experiencePage.titleAccent")}</span>
           </h1>
           <p className="text-lg md:text-xl text-primary-foreground/80 max-w-3xl mx-auto">
-            From small drilling operations to major energy corporations, we've 
-            built a track record of delivering exceptional results for the oil 
-            and gas industry.
+            {t("experiencePage.description")}
           </p>
         </div>
       </section>
@@ -99,11 +100,13 @@ export default function Experience() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
+              <div key={stat.value} className="text-center">
                 <div className="text-4xl md:text-5xl font-bold text-accent mb-2">
                   {stat.value}
                 </div>
-                <div className="text-muted-foreground">{stat.label}</div>
+                <div className="text-muted-foreground">
+                  {stat.labelKey ? t(stat.labelKey) : stat.label}
+                </div>
               </div>
             ))}
           </div>
@@ -115,15 +118,11 @@ export default function Experience() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
             <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-              Our Journey
+              {t("experiencePage.journeyBadge")}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Growing with the Industry
+              {t("experiencePage.journeyTitle")}
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Our journey reflects our commitment to evolving alongside the 
-              energy sector and consistently exceeding client expectations.
-            </p>
           </div>
 
           <div className="relative">
@@ -176,14 +175,13 @@ export default function Experience() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-                Sectors We Serve
+                {t("experiencePage.industriesBadge")}
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Comprehensive Energy Sector Coverage
+                {t("experiencePage.industriesTitle")}
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Our expertise spans the entire oil and gas value chain, from 
-                exploration and production to refining and distribution.
+                {t("experiencePage.industriesDescription")}
               </p>
 
               <div className="grid sm:grid-cols-2 gap-4">
@@ -231,10 +229,10 @@ export default function Experience() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
             <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-              Client Testimonials
+              {t("experiencePage.testimonialsBadge")}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              What Our Clients Say
+              {t("experiencePage.testimonialsTitle")}
             </h2>
           </div>
 
@@ -265,10 +263,10 @@ export default function Experience() {
       <section className="section-padding gradient-overlay">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
-            Join Our Growing List of Partners
+            {t("experiencePage.ctaTitle")}
           </h2>
           <p className="text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-            Discover how APOYOMAN can help your organization achieve operational excellence.
+            {t("experiencePage.ctaDescription")}
           </p>
           <Button
             asChild
@@ -276,7 +274,7 @@ export default function Experience() {
             className="bg-accent text-accent-foreground hover:bg-accent/90"
           >
             <Link to="/contact">
-              Get in Touch
+              {t("experiencePage.ctaButton")}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>

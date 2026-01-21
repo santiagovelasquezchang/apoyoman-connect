@@ -1,39 +1,38 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Calculator, Users, FileCheck, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const services = [
-  {
-    icon: Calculator,
-    title: "Financial Management",
-    description:
-      "Complete financial operations including accounting, budgeting, reporting, and strategic financial planning tailored for the oil & gas industry.",
-    href: "/services#finance",
-  },
-  {
-    icon: Users,
-    title: "HR Outsourcing",
-    description:
-      "End-to-end human resources management from recruitment to employee development, designed for energy sector workforce dynamics.",
-    href: "/services#hr",
-  },
-  {
-    icon: FileCheck,
-    title: "Payroll & Compliance",
-    description:
-      "Accurate, timely payroll processing with full regulatory compliance covering federal, state, and industry-specific requirements.",
-    href: "/services#payroll",
-  },
-  {
-    icon: Briefcase,
-    title: "Administrative Support",
-    description:
-      "Comprehensive back-office support including document management, procurement assistance, and operational administration.",
-    href: "/services#admin",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function ServicesPreview() {
+  const { t } = useLanguage();
+
+  const services = [
+    {
+      icon: Calculator,
+      title: t("services.financial.title"),
+      description: t("services.financial.description"),
+      href: "/services#finance",
+    },
+    {
+      icon: Users,
+      title: t("services.hr.title"),
+      description: t("services.hr.description"),
+      href: "/services#hr",
+    },
+    {
+      icon: FileCheck,
+      title: t("services.payroll.title"),
+      description: t("services.payroll.description"),
+      href: "/services#payroll",
+    },
+    {
+      icon: Briefcase,
+      title: t("services.compliance.title"),
+      description: t("services.compliance.description"),
+      href: "/services#admin",
+    },
+  ];
+
   return (
     <section className="section-padding bg-section-light relative overflow-hidden">
       {/* Decorative elements */}
@@ -44,14 +43,13 @@ export function ServicesPreview() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <span className="inline-flex items-center gap-2 px-5 py-2 rounded-2xl bg-accent/10 text-accent text-sm font-semibold uppercase tracking-wider mb-4 border border-accent/20">
-            What We Do
+            {t("services.badge")}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Comprehensive B2B Solutions for Oil & Gas
+            {t("services.title")}
           </h2>
           <p className="text-lg text-muted-foreground">
-            We specialize in delivering financial and HR excellence, allowing energy 
-            companies to focus on their core operations while we manage the complexities.
+            {t("services.description")}
           </p>
         </div>
 
@@ -77,7 +75,7 @@ export function ServicesPreview() {
                     to={service.href}
                     className="inline-flex items-center text-sm font-semibold text-accent hover:text-accent/80 transition-colors group/link"
                   >
-                    Learn More
+                    {t("services.viewAll").replace("View All Services", "Learn More")}
                     <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-2 transition-transform" />
                   </Link>
                 </div>
@@ -90,7 +88,7 @@ export function ServicesPreview() {
         <div className="text-center mt-16">
           <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-2xl px-10 h-14 soft-shadow transition-all hover:scale-105">
             <Link to="/services">
-              View All Services
+              {t("services.viewAll")}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>

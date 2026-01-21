@@ -2,33 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { ArrowRight, Target, Eye, Heart, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const values = [
-  {
-    icon: Shield,
-    title: "Integrity",
-    description:
-      "We uphold the highest ethical standards in all our business relationships and operations.",
-  },
-  {
-    icon: Target,
-    title: "Excellence",
-    description:
-      "We strive for excellence in every service we provide, continuously improving our processes.",
-  },
-  {
-    icon: Heart,
-    title: "Partnership",
-    description:
-      "We view our clients as partners, investing in their success as if it were our own.",
-  },
-  {
-    icon: Eye,
-    title: "Transparency",
-    description:
-      "We maintain open communication and clear reporting in all our client relationships.",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const team = [
   {
@@ -54,21 +28,49 @@ const team = [
 ];
 
 export default function About() {
+  const { t } = useLanguage();
+
+  const values = [
+    {
+      icon: Shield,
+      title: "Integrity",
+      description:
+        "We uphold the highest ethical standards in all our business relationships and operations.",
+    },
+    {
+      icon: Target,
+      title: "Excellence",
+      description:
+        "We strive for excellence in every service we provide, continuously improving our processes.",
+    },
+    {
+      icon: Heart,
+      title: "Partnership",
+      description:
+        "We view our clients as partners, investing in their success as if it were our own.",
+    },
+    {
+      icon: Eye,
+      title: "Transparency",
+      description:
+        "We maintain open communication and clear reporting in all our client relationships.",
+    },
+  ];
+
   return (
     <Layout>
       {/* Hero Section */}
       <section className="pt-24 pb-16 md:pt-32 md:pb-20 gradient-overlay">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-            About Us
+            {t("aboutPage.badge")}
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-            Your Strategic{" "}
-            <span className="text-accent">Business Partner</span>
+            {t("aboutPage.title")}{" "}
+            <span className="text-accent">{t("aboutPage.titleAccent")}</span>
           </h1>
           <p className="text-lg md:text-xl text-primary-foreground/80 max-w-3xl mx-auto">
-            APOYOMAN is a trusted B2B service provider specializing in financial 
-            management and HR outsourcing for the oil and gas industry.
+            {t("aboutPage.description")}
           </p>
         </div>
       </section>
@@ -83,13 +85,10 @@ export default function About() {
                 <Target className="h-6 w-6 text-accent" />
               </div>
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                Our Mission
+                {t("aboutPage.missionTitle")}
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                To empower oil and gas companies with exceptional financial and 
-                HR services, enabling them to focus on their core operations while 
-                we ensure operational excellence in every aspect of back-office 
-                management.
+                {t("aboutPage.missionDescription")}
               </p>
             </div>
 
@@ -99,12 +98,10 @@ export default function About() {
                 <Eye className="h-6 w-6 text-accent" />
               </div>
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                Our Vision
+                {t("aboutPage.visionTitle")}
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                To be the premier B2B partner for the energy industry, recognized 
-                for our expertise, reliability, and the measurable value we deliver 
-                to our clients' operations and bottom line.
+                {t("aboutPage.visionDescription")}
               </p>
             </div>
           </div>
@@ -117,33 +114,15 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-                Our Story
+                {t("aboutPage.storyBadge")}
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Built on Industry Expertise
+                {t("aboutPage.storyTitle")}
               </h2>
               <div className="space-y-4 text-muted-foreground">
-                <p>
-                  APOYOMAN was founded with a clear purpose: to provide specialized 
-                  business services tailored exclusively for the oil and gas industry. 
-                  Our founders, with decades of combined experience in the energy 
-                  sector, recognized that general business service providers often 
-                  lacked the industry-specific knowledge needed to truly serve 
-                  oil and gas companies.
-                </p>
-                <p>
-                  What started as a small team serving local drilling operations 
-                  has grown into a comprehensive service provider trusted by energy 
-                  companies nationwide. Our growth has been organic, built on 
-                  referrals and the reputation we've earned through consistent, 
-                  quality service delivery.
-                </p>
-                <p>
-                  Today, we continue to invest in our people, technology, and 
-                  processes to ensure we remain at the forefront of B2B services 
-                  for the energy industry. Our commitment to our clients' success 
-                  drives everything we do.
-                </p>
+                <p>{t("aboutPage.storyP1")}</p>
+                <p>{t("aboutPage.storyP2")}</p>
+                <p>{t("aboutPage.storyP3")}</p>
               </div>
             </div>
 
@@ -169,15 +148,11 @@ export default function About() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
             <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-              Our Values
+              {t("aboutPage.valuesBadge")}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              The Principles That Guide Us
+              {t("aboutPage.valuesTitle")}
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Our core values are the foundation of how we work and how we 
-              serve our clients every day.
-            </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -206,15 +181,11 @@ export default function About() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
             <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-              Leadership
+              {t("aboutPage.teamBadge")}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Meet Our Team
+              {t("aboutPage.teamTitle")}
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Our leadership brings together decades of experience in the oil 
-              and gas industry, financial management, and human resources.
-            </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -249,10 +220,10 @@ export default function About() {
       <section className="section-padding gradient-overlay">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
-            Want to Learn More?
+            {t("aboutPage.ctaTitle")}
           </h2>
           <p className="text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-            We'd love to discuss how APOYOMAN can support your organization's goals.
+            {t("aboutPage.ctaDescription")}
           </p>
           <Button
             asChild
@@ -260,7 +231,7 @@ export default function About() {
             className="bg-accent text-accent-foreground hover:bg-accent/90"
           >
             <Link to="/contact">
-              Contact Our Team
+              {t("aboutPage.ctaButton")}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>

@@ -9,99 +9,96 @@ import {
   CheckCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const services = [
-  {
-    id: "finance",
-    icon: Calculator,
-    title: "Financial Management",
-    subtitle: "Complete Financial Operations",
-    description:
-      "Our comprehensive financial management services are designed specifically for the complex needs of oil and gas operations. From day-to-day accounting to strategic financial planning, we ensure your finances are managed with precision.",
-    features: [
-      "Full-cycle accounting and bookkeeping",
-      "Budget planning and forecasting",
-      "Financial reporting and analysis",
-      "Cost control and optimization",
-      "Capital expenditure management",
-      "Tax planning and compliance",
-      "Audit preparation and support",
-      "Cash flow management",
-    ],
-  },
-  {
-    id: "hr",
-    icon: Users,
-    title: "HR Outsourcing",
-    subtitle: "End-to-End Human Resources",
-    description:
-      "Managing a workforce in the energy sector requires specialized knowledge. Our HR outsourcing solutions cover everything from recruitment to retirement, tailored for the unique dynamics of oil and gas companies.",
-    features: [
-      "Talent acquisition and recruitment",
-      "Employee onboarding programs",
-      "Performance management systems",
-      "Training and development",
-      "Benefits administration",
-      "Employee relations and engagement",
-      "HRIS implementation and management",
-      "Workforce planning and analytics",
-    ],
-  },
-  {
-    id: "payroll",
-    icon: FileCheck,
-    title: "Payroll & Compliance",
-    subtitle: "Accurate & Compliant Payments",
-    description:
-      "Payroll in the oil and gas industry comes with unique challenges including rotating schedules, hazard pay, and multi-state operations. We handle it all while ensuring full regulatory compliance.",
-    features: [
-      "Multi-state payroll processing",
-      "Direct deposit management",
-      "Tax withholding and filing",
-      "Workers' compensation administration",
-      "Industry-specific compliance",
-      "Time and attendance tracking",
-      "Expense reimbursement processing",
-      "Year-end reporting (W-2s, 1099s)",
-    ],
-  },
-  {
-    id: "admin",
-    icon: Briefcase,
-    title: "Administrative Support",
-    subtitle: "Back-Office Excellence",
-    description:
-      "Free your team to focus on core operations while we handle the administrative workload. Our comprehensive support services keep your business running smoothly behind the scenes.",
-    features: [
-      "Document management and control",
-      "Procurement support",
-      "Vendor management",
-      "Contract administration",
-      "Travel and logistics coordination",
-      "Office management",
-      "Data entry and processing",
-      "Records retention and archiving",
-    ],
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Services() {
+  const { t } = useLanguage();
+
+  const services = [
+    {
+      id: "finance",
+      icon: Calculator,
+      title: t("services.financial.title"),
+      subtitle: t("servicesPage.features"),
+      description: t("services.financial.description"),
+      features: [
+        "Full-cycle accounting and bookkeeping",
+        "Budget planning and forecasting",
+        "Financial reporting and analysis",
+        "Cost control and optimization",
+        "Capital expenditure management",
+        "Tax planning and compliance",
+        "Audit preparation and support",
+        "Cash flow management",
+      ],
+    },
+    {
+      id: "hr",
+      icon: Users,
+      title: t("services.hr.title"),
+      subtitle: t("servicesPage.features"),
+      description: t("services.hr.description"),
+      features: [
+        "Talent acquisition and recruitment",
+        "Employee onboarding programs",
+        "Performance management systems",
+        "Training and development",
+        "Benefits administration",
+        "Employee relations and engagement",
+        "HRIS implementation and management",
+        "Workforce planning and analytics",
+      ],
+    },
+    {
+      id: "payroll",
+      icon: FileCheck,
+      title: t("services.payroll.title"),
+      subtitle: t("servicesPage.features"),
+      description: t("services.payroll.description"),
+      features: [
+        "Multi-state payroll processing",
+        "Direct deposit management",
+        "Tax withholding and filing",
+        "Workers' compensation administration",
+        "Industry-specific compliance",
+        "Time and attendance tracking",
+        "Expense reimbursement processing",
+        "Year-end reporting (W-2s, 1099s)",
+      ],
+    },
+    {
+      id: "admin",
+      icon: Briefcase,
+      title: t("services.compliance.title"),
+      subtitle: t("servicesPage.features"),
+      description: t("services.compliance.description"),
+      features: [
+        "Document management and control",
+        "Procurement support",
+        "Vendor management",
+        "Contract administration",
+        "Travel and logistics coordination",
+        "Office management",
+        "Data entry and processing",
+        "Records retention and archiving",
+      ],
+    },
+  ];
+
   return (
     <Layout>
       {/* Hero Section */}
       <section className="pt-24 pb-16 md:pt-32 md:pb-20 gradient-overlay">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-            Our Services
+            {t("servicesPage.badge")}
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-            Tailored Solutions for{" "}
-            <span className="text-accent">Oil & Gas</span>
+            {t("servicesPage.title")}{" "}
+            <span className="text-accent">{t("servicesPage.titleAccent")}</span>
           </h1>
           <p className="text-lg md:text-xl text-primary-foreground/80 max-w-3xl mx-auto">
-            We provide specialized B2B services designed to meet the unique 
-            challenges of the energy industry. Our expertise helps you operate 
-            more efficiently and cost-effectively.
+            {t("servicesPage.description")}
           </p>
         </div>
       </section>
@@ -145,7 +142,7 @@ export default function Services() {
                   className="bg-primary text-primary-foreground hover:bg-primary/90"
                 >
                   <Link to="/contact">
-                    Request a Consultation
+                    {t("servicesPage.consultation")}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -158,7 +155,7 @@ export default function Services() {
                 }`}
               >
                 <h3 className="text-lg font-semibold text-foreground mb-6">
-                  What's Included:
+                  {t("servicesPage.features")}:
                 </h3>
                 <ul className="space-y-4">
                   {service.features.map((feature) => (
@@ -178,10 +175,10 @@ export default function Services() {
       <section className="section-padding gradient-overlay">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
-            Ready to Get Started?
+            {t("servicesPage.ctaTitle")}
           </h2>
           <p className="text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-            Contact us today to discuss how our services can benefit your organization.
+            {t("servicesPage.ctaDescription")}
           </p>
           <Button
             asChild
@@ -189,7 +186,7 @@ export default function Services() {
             className="bg-accent text-accent-foreground hover:bg-accent/90"
           >
             <Link to="/contact">
-              Contact Us
+              {t("servicesPage.ctaButton")}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>

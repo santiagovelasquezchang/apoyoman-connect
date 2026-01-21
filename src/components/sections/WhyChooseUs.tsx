@@ -1,33 +1,32 @@
 import { CheckCircle, Award, Clock, Headphones } from "lucide-react";
-
-const reasons = [
-  {
-    icon: Award,
-    title: "Industry Expertise",
-    description:
-      "Deep understanding of oil & gas sector requirements, regulations, and operational dynamics.",
-  },
-  {
-    icon: CheckCircle,
-    title: "Proven Track Record",
-    description:
-      "15+ years serving major energy companies with consistent delivery and measurable results.",
-  },
-  {
-    icon: Clock,
-    title: "Efficiency First",
-    description:
-      "Streamlined processes that reduce overhead costs and improve operational efficiency.",
-  },
-  {
-    icon: Headphones,
-    title: "Dedicated Support",
-    description:
-      "24/7 availability with dedicated account managers who understand your business.",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function WhyChooseUs() {
+  const { t } = useLanguage();
+
+  const reasons = [
+    {
+      icon: Award,
+      title: t("why.reason1.title"),
+      description: t("why.reason1.description"),
+    },
+    {
+      icon: CheckCircle,
+      title: t("why.reason2.title"),
+      description: t("why.reason2.description"),
+    },
+    {
+      icon: Clock,
+      title: t("why.reason3.title"),
+      description: t("why.reason3.description"),
+    },
+    {
+      icon: Headphones,
+      title: t("why.reason4.title"),
+      description: t("why.reason4.description"),
+    },
+  ];
+
   return (
     <section className="section-padding bg-background relative overflow-hidden">
       {/* Decorative blobs */}
@@ -39,20 +38,17 @@ export function WhyChooseUs() {
           {/* Content */}
           <div>
             <span className="inline-flex items-center gap-2 px-5 py-2 rounded-2xl bg-accent/10 text-accent text-sm font-semibold uppercase tracking-wider mb-6 border border-accent/20">
-              Why APOYOMAN
+              {t("why.badge")}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Your Trusted Partner in Business Operations
+              {t("why.title")}
             </h2>
             <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
-              We understand the unique challenges faced by oil and gas companies. 
-              Our specialized services are designed to handle complex financial 
-              and HR requirements, so you can concentrate on extraction, production, 
-              and growth.
+              {t("why.description")}
             </p>
 
             <div className="space-y-6">
-              {reasons.map((reason, index) => (
+              {reasons.map((reason) => (
                 <div 
                   key={reason.title} 
                   className="flex items-start gap-5 p-5 rounded-2xl hover:bg-muted/50 transition-colors group"
@@ -83,10 +79,10 @@ export function WhyChooseUs() {
                   98%
                 </div>
                 <p className="text-2xl md:text-3xl font-semibold text-primary-foreground mb-3">
-                  Client Retention Rate
+                  {t("why.retention")}
                 </p>
                 <p className="text-primary-foreground/70 text-lg">
-                  Our clients stay because we deliver results
+                  {t("why.retentionDesc")}
                 </p>
               </div>
             </div>
@@ -99,7 +95,7 @@ export function WhyChooseUs() {
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-foreground">15+</div>
-                  <div className="text-sm text-muted-foreground">Years of Excellence</div>
+                  <div className="text-sm text-muted-foreground">{t("why.years")}</div>
                 </div>
               </div>
             </div>
