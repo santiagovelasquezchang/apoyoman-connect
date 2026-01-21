@@ -25,13 +25,17 @@ export function HeroSection() {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 gradient-overlay" />
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
+      
+      {/* Decorative Blobs */}
+      <div className="absolute top-20 right-10 w-96 h-96 bg-accent/20 blob-shape blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 left-10 w-80 h-80 bg-primary-foreground/10 blob-shape-alt blur-3xl" />
+      <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-accent/10 blob-shape blur-2xl" />
 
       <div className="container relative mx-auto px-4 md:px-6 pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 text-accent mb-6 animate-fade-in">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-accent/20 text-accent mb-6 animate-fade-in backdrop-blur-sm border border-accent/30">
               <Shield size={16} />
               <span className="text-sm font-medium">Trusted by Oil & Gas Leaders</span>
             </div>
@@ -51,7 +55,7 @@ export function HeroSection() {
               <Button
                 asChild
                 size="lg"
-                className="bg-accent text-accent-foreground hover:bg-accent/90 text-base"
+                className="bg-accent text-accent-foreground hover:bg-accent/90 text-base rounded-2xl px-8 h-14 soft-shadow-accent transition-all hover:scale-105"
               >
                 <Link to="/services">
                   Explore Services
@@ -62,53 +66,55 @@ export function HeroSection() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-base"
+                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-base rounded-2xl px-8 h-14 backdrop-blur-sm transition-all hover:scale-105"
               >
                 <Link to="/contact">Contact Us</Link>
               </Button>
             </div>
           </div>
 
-          {/* Feature Cards */}
-          <div className="hidden lg:grid gap-4">
-            {features.map((feature, index) => (
-              <div
-                key={feature.title}
-                className={`flex items-start gap-4 p-6 rounded-xl bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/10 animate-slide-in-right animation-delay-${(index + 1) * 100}`}
-                style={{ animationDelay: `${(index + 1) * 100}ms` }}
-              >
-                <div className="p-3 rounded-lg bg-accent">
-                  <feature.icon className="h-6 w-6 text-accent-foreground" />
+          {/* Feature Cards - Stacked with offset */}
+          <div className="hidden lg:block relative">
+            <div className="space-y-5">
+              {features.map((feature, index) => (
+                <div
+                  key={feature.title}
+                  className="flex items-start gap-5 p-6 rounded-3xl glass border-primary-foreground/10 animate-slide-in-right transition-all hover:translate-x-2 hover:bg-white/15"
+                  style={{ 
+                    animationDelay: `${(index + 1) * 100}ms`,
+                    marginLeft: `${index * 20}px`
+                  }}
+                >
+                  <div className="p-4 rounded-2xl bg-accent soft-shadow-accent">
+                    <feature.icon className="h-6 w-6 text-accent-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-primary-foreground mb-1">
+                      {feature.title}
+                    </h3>
+                    <p className="text-primary-foreground/70">{feature.description}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-primary-foreground mb-1">
-                    {feature.title}
-                  </h3>
-                  <p className="text-primary-foreground/70">{feature.description}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Stats Bar */}
-        <div className="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 p-8 rounded-2xl bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/10 animate-fade-in animation-delay-400">
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-accent mb-2">15+</div>
-            <div className="text-sm text-primary-foreground/70">Years Experience</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-accent mb-2">50+</div>
-            <div className="text-sm text-primary-foreground/70">Oil & Gas Clients</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-accent mb-2">98%</div>
-            <div className="text-sm text-primary-foreground/70">Client Retention</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-accent mb-2">24/7</div>
-            <div className="text-sm text-primary-foreground/70">Support Available</div>
-          </div>
+        {/* Stats Bar - More organic shape */}
+        <div className="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 p-8 md:p-10 rounded-[2.5rem] glass animate-fade-in animation-delay-400">
+          {[
+            { value: "15+", label: "Years Experience" },
+            { value: "50+", label: "Oil & Gas Clients" },
+            { value: "98%", label: "Client Retention" },
+            { value: "24/7", label: "Support Available" },
+          ].map((stat, index) => (
+            <div key={stat.label} className="text-center group">
+              <div className="text-3xl md:text-4xl font-bold text-accent mb-2 transition-transform group-hover:scale-110">
+                {stat.value}
+              </div>
+              <div className="text-sm text-primary-foreground/70">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
