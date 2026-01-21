@@ -6,32 +6,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-
-const contactInfo = [
-  {
-    icon: MapPin,
-    title: "Our Office",
-    details: ["123 Business District", "Houston, TX 77001", "United States"],
-  },
-  {
-    icon: Phone,
-    title: "Phone",
-    details: ["+1 (234) 567-890", "+1 (234) 567-891"],
-  },
-  {
-    icon: Mail,
-    title: "Email",
-    details: ["contact@apoyoman.com", "support@apoyoman.com"],
-  },
-  {
-    icon: Clock,
-    title: "Business Hours",
-    details: ["Monday - Friday: 8:00 AM - 6:00 PM", "Saturday: 9:00 AM - 1:00 PM"],
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Contact() {
   const { toast } = useToast();
+  const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -40,6 +19,29 @@ export default function Contact() {
     phone: "",
     message: "",
   });
+
+  const contactInfo = [
+    {
+      icon: MapPin,
+      title: t("contact.office"),
+      details: ["123 Business District", "Houston, TX 77001", "United States"],
+    },
+    {
+      icon: Phone,
+      title: t("contact.phone"),
+      details: ["+1 (234) 567-890", "+1 (234) 567-891"],
+    },
+    {
+      icon: Mail,
+      title: t("contact.email"),
+      details: ["contact@apoyoman.com", "support@apoyoman.com"],
+    },
+    {
+      icon: Clock,
+      title: t("contact.hours"),
+      details: ["Monday - Friday: 8:00 AM - 6:00 PM", "Saturday: 9:00 AM - 1:00 PM"],
+    },
+  ];
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -56,8 +58,8 @@ export default function Contact() {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you soon.",
+      title: t("contactPage.successTitle"),
+      description: t("contactPage.successDescription"),
     });
 
     setFormData({
@@ -76,15 +78,14 @@ export default function Contact() {
       <section className="pt-24 pb-16 md:pt-32 md:pb-20 gradient-overlay">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-            Contact Us
+            {t("contactPage.badge")}
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-            Let's Start a{" "}
-            <span className="text-accent">Conversation</span>
+            {t("contactPage.title")}{" "}
+            <span className="text-accent">{t("contactPage.titleAccent")}</span>
           </h1>
           <p className="text-lg md:text-xl text-primary-foreground/80 max-w-3xl mx-auto">
-            Ready to optimize your operations? Reach out to us and discover how 
-            APOYOMAN can support your business goals.
+            {t("contactPage.description")}
           </p>
         </div>
       </section>
@@ -95,14 +96,12 @@ export default function Contact() {
           <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
             {/* Contact Info */}
             <div className="lg:col-span-1">
+              <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-2">
+                {t("contactPage.infoBadge")}
+              </span>
               <h2 className="text-2xl font-bold text-foreground mb-6">
-                Get in Touch
+                {t("contactPage.infoTitle")}
               </h2>
-              <p className="text-muted-foreground mb-8">
-                Have a question or want to learn more about our services? 
-                We're here to help. Reach out using any of the methods below 
-                or fill out the contact form.
-              </p>
 
               <div className="space-y-6">
                 {contactInfo.map((item) => (
@@ -128,18 +127,17 @@ export default function Contact() {
             {/* Contact Form */}
             <div className="lg:col-span-2">
               <div className="bg-card rounded-2xl border border-border p-6 md:p-8">
-                <h2 className="text-2xl font-bold text-foreground mb-2">
-                  Send Us a Message
+                <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-2">
+                  {t("contactPage.formBadge")}
+                </span>
+                <h2 className="text-2xl font-bold text-foreground mb-6">
+                  {t("contactPage.formTitle")}
                 </h2>
-                <p className="text-muted-foreground mb-6">
-                  Fill out the form below and we'll get back to you within 
-                  24 business hours.
-                </p>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Full Name *</Label>
+                      <Label htmlFor="name">{t("contactPage.formName")} *</Label>
                       <Input
                         id="name"
                         name="name"
@@ -150,7 +148,7 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email Address *</Label>
+                      <Label htmlFor="email">{t("contactPage.formEmail")} *</Label>
                       <Input
                         id="email"
                         name="email"
@@ -165,7 +163,7 @@ export default function Contact() {
 
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="company">Company Name</Label>
+                      <Label htmlFor="company">{t("contactPage.formCompany")}</Label>
                       <Input
                         id="company"
                         name="company"
@@ -175,7 +173,7 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number</Label>
+                      <Label htmlFor="phone">{t("contactPage.formPhone")}</Label>
                       <Input
                         id="phone"
                         name="phone"
@@ -188,11 +186,11 @@ export default function Contact() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">How Can We Help? *</Label>
+                    <Label htmlFor="message">{t("contactPage.formMessage")} *</Label>
                     <Textarea
                       id="message"
                       name="message"
-                      placeholder="Tell us about your needs and how we can assist you..."
+                      placeholder={t("contactPage.formMessagePlaceholder")}
                       rows={5}
                       value={formData.message}
                       onChange={handleChange}
@@ -206,7 +204,7 @@ export default function Contact() {
                     className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? "Sending..." : "Send Message"}
+                    {isSubmitting ? t("contactPage.formSubmitting") : t("contactPage.formSubmit")}
                   </Button>
                 </form>
               </div>
@@ -221,7 +219,7 @@ export default function Contact() {
           <div className="text-center">
             <MapPin className="h-12 w-12 text-accent mx-auto mb-4" />
             <p className="text-muted-foreground">
-              123 Business District, Houston, TX 77001
+              {t("contactPage.mapTitle")}
             </p>
           </div>
         </div>

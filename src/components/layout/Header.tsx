@@ -2,20 +2,23 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LanguageToggle } from "@/components/LanguageToggle";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { cn } from "@/lib/utils";
-
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Services", href: "/services" },
-  { name: "Experience", href: "/experience" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
-];
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { name: t("nav.home"), href: "/" },
+    { name: t("nav.services"), href: "/services" },
+    { name: t("nav.experience"), href: "/experience" },
+    { name: t("nav.about"), href: "/about" },
+    { name: t("nav.contact"), href: "/contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,21 +75,25 @@ export function Header() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* Right side: Language Toggle + CTA */}
+          <div className="hidden md:flex items-center gap-2">
+            <LanguageToggle />
             <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-              <Link to="/contact">Get Started</Link>
+              <Link to="/contact">{t("nav.getStarted")}</Link>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-foreground"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex md:hidden items-center gap-2">
+            <LanguageToggle />
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 text-foreground"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </nav>
 
         {/* Mobile Navigation */}
@@ -109,7 +116,7 @@ export function Header() {
               ))}
               <div className="px-4 pt-4">
                 <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                  <Link to="/contact">Get Started</Link>
+                  <Link to="/contact">{t("nav.getStarted")}</Link>
                 </Button>
               </div>
             </div>
