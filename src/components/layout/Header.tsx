@@ -49,7 +49,7 @@ export function Header() {
               <span
                 className={cn(
                   "text-xl md:text-2xl font-bold tracking-tight transition-colors",
-                  isScrolled ? "text-primary" : "text-primary"
+                  isScrolled ? "text-primary" : "text-white"
                 )}
               >
                 APOYO<span className="text-accent">MAN</span>
