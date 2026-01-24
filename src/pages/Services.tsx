@@ -7,9 +7,11 @@ import {
   Briefcase,
   ArrowRight,
   CheckCircle,
+  ClipboardList,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { ServiceInquiryForm } from "@/components/forms/ServiceInquiryForm";
 
 export default function Services() {
   const { t } = useLanguage();
@@ -170,6 +172,50 @@ export default function Services() {
           </div>
         </section>
       ))}
+
+      {/* Inquiry Form Section */}
+      <section className="section-padding bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            {/* Left Column - Info */}
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent mb-4">
+                <ClipboardList size={16} />
+                <span className="text-sm font-semibold uppercase tracking-wider">
+                  {t("serviceForm.title")}
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                {t("servicesPage.ctaTitle")}
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                {t("serviceForm.description")}
+              </p>
+              
+              {/* Trust indicators */}
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-accent" />
+                  <span className="text-muted-foreground">Free consultation with no obligations</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-accent" />
+                  <span className="text-muted-foreground">Response within 24 business hours</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-accent" />
+                  <span className="text-muted-foreground">Customized solutions for your needs</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column - Form */}
+            <div className="bg-card rounded-3xl border border-border p-6 md:p-8 soft-shadow">
+              <ServiceInquiryForm sourcePage="services" />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="section-padding gradient-overlay">

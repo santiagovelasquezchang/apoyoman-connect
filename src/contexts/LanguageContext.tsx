@@ -168,6 +168,35 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.emailValue": "info@apoyoman.com\nsupport@apoyoman.com",
     "contact.hours": "Business Hours",
     "contact.hoursValue": "Monday - Friday: 8:00 AM - 6:00 PM\nSaturday: 9:00 AM - 1:00 PM",
+
+    // Contact Form
+    "contact.form.name": "Full Name",
+    "contact.form.namePlaceholder": "Enter your full name",
+    "contact.form.email": "Email Address",
+    "contact.form.emailPlaceholder": "Enter your email address",
+    "contact.form.company": "Company Name",
+    "contact.form.companyPlaceholder": "Enter your company name",
+    "contact.form.message": "Message",
+    "contact.form.submitting": "Submitting...",
+    "contact.form.successTitle": "Inquiry Submitted!",
+    "contact.form.successMessage": "Thank you for your interest. Our team will contact you within 24 hours.",
+    "contact.form.errorTitle": "Submission Failed",
+    "contact.form.errorMessage": "There was an error submitting your inquiry. Please try again.",
+
+    // Service Inquiry Form
+    "serviceForm.title": "Request Service Information",
+    "serviceForm.description": "Fill out the form below and our team will get back to you within 24 hours.",
+    "serviceForm.jobTitle": "Job Title / Role",
+    "serviceForm.jobTitlePlaceholder": "e.g. Operations Manager, CFO",
+    "serviceForm.serviceOfInterest": "Service of Interest",
+    "serviceForm.selectService": "Select a service...",
+    "serviceForm.messagePlaceholder": "Tell us about your specific needs and requirements...",
+    "serviceForm.submitInquiry": "Submit Inquiry",
+
+    // Service Categories for dropdown
+    "services.administrative.title": "Administrative Services",
+    "services.accounting.title": "Accounting & Finance",
+    "services.staffing.title": "Staffing Solutions",
   },
   es: {
     // Navigation
@@ -326,6 +355,35 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.emailValue": "info@apoyoman.com\nsupport@apoyoman.com",
     "contact.hours": "Horario de Atención",
     "contact.hoursValue": "Lunes - Viernes: 8:00 AM - 6:00 PM\nSábado: 9:00 AM - 1:00 PM",
+
+    // Contact Form
+    "contact.form.name": "Nombre Completo",
+    "contact.form.namePlaceholder": "Ingresa tu nombre completo",
+    "contact.form.email": "Correo Electrónico",
+    "contact.form.emailPlaceholder": "Ingresa tu correo electrónico",
+    "contact.form.company": "Nombre de la Empresa",
+    "contact.form.companyPlaceholder": "Ingresa el nombre de tu empresa",
+    "contact.form.message": "Mensaje",
+    "contact.form.submitting": "Enviando...",
+    "contact.form.successTitle": "¡Consulta Enviada!",
+    "contact.form.successMessage": "Gracias por tu interés. Nuestro equipo te contactará en 24 horas.",
+    "contact.form.errorTitle": "Error al Enviar",
+    "contact.form.errorMessage": "Hubo un error al enviar tu consulta. Por favor intenta de nuevo.",
+
+    // Service Inquiry Form
+    "serviceForm.title": "Solicitar Información del Servicio",
+    "serviceForm.description": "Completa el formulario y nuestro equipo te contactará en 24 horas.",
+    "serviceForm.jobTitle": "Cargo / Puesto",
+    "serviceForm.jobTitlePlaceholder": "ej. Gerente de Operaciones, CFO",
+    "serviceForm.serviceOfInterest": "Servicio de Interés",
+    "serviceForm.selectService": "Selecciona un servicio...",
+    "serviceForm.messagePlaceholder": "Cuéntanos sobre tus necesidades y requisitos específicos...",
+    "serviceForm.submitInquiry": "Enviar Consulta",
+
+    // Service Categories for dropdown
+    "services.administrative.title": "Servicios Administrativos",
+    "services.accounting.title": "Contabilidad y Finanzas",
+    "services.staffing.title": "Soluciones de Personal",
   },
 };
 
