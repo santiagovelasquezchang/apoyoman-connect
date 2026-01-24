@@ -66,8 +66,12 @@ export function Header() {
                 className={cn(
                   "px-4 py-2 text-sm font-medium rounded-md transition-colors",
                   location.pathname === link.href
-                    ? "text-accent bg-primary/5"
-                    : "text-foreground/80 hover:text-accent hover:bg-primary/5"
+                    ? isScrolled 
+                      ? "text-accent bg-primary/5" 
+                      : "text-accent bg-white/10"
+                    : isScrolled
+                      ? "text-foreground/80 hover:text-accent hover:bg-primary/5"
+                      : "text-white/90 hover:text-accent hover:bg-white/10"
                 )}
               >
                 {link.name}
@@ -78,7 +82,15 @@ export function Header() {
           {/* Right side: Language Toggle + CTA */}
           <div className="hidden md:flex items-center gap-2">
             <LanguageToggle />
-            <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+            <Button 
+              asChild 
+              className={cn(
+                "font-semibold transition-all",
+                isScrolled 
+                  ? "bg-accent text-accent-foreground hover:bg-accent/90"
+                  : "bg-accent text-accent-foreground hover:bg-accent/90"
+              )}
+            >
               <Link to="/contact">{t("nav.getStarted")}</Link>
             </Button>
           </div>
