@@ -40,7 +40,7 @@ export function CTASection() {
               asChild
               size="lg"
               variant="outline"
-              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-base rounded-2xl px-10 h-14 backdrop-blur-sm transition-all hover:scale-105"
+              className="border-primary-foreground/30 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/15 hover:text-primary-foreground text-base rounded-2xl px-10 h-14 backdrop-blur-sm transition-all hover:scale-105"
             >
               <a href="tel:+1234567890">
                 <Phone className="mr-2 h-5 w-5" />
