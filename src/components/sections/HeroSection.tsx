@@ -74,7 +74,7 @@ export function HeroSection() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-base rounded-2xl px-8 h-14 backdrop-blur-sm transition-all hover:scale-105"
+                className="border-2 border-white bg-white/10 text-white hover:bg-white hover:text-primary text-base rounded-2xl px-8 h-14 backdrop-blur-sm transition-all hover:scale-105 font-semibold"
               >
                 <Link to="/contact">{t("hero.contactUs")}</Link>
               </Button>
