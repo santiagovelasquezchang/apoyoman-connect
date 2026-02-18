@@ -102,19 +102,78 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Experience Page
     "experiencePage.badge": "Our Track Record",
-    "experiencePage.title": "15+ Years of",
-    "experiencePage.titleAccent": "Industry Excellence",
-    "experiencePage.description": "A proven history of delivering exceptional financial and HR services to the oil and gas sector.",
-    "experiencePage.journeyBadge": "Our Journey",
-    "experiencePage.journeyTitle": "Milestones That Define Us",
-    "experiencePage.industriesBadge": "Sectors We Serve",
-    "experiencePage.industriesTitle": "Deep Expertise Across Energy",
-    "experiencePage.industriesDescription": "Our specialized knowledge spans the entire energy value chain, from exploration to distribution.",
-    "experiencePage.testimonialsBadge": "Client Testimonials",
-    "experiencePage.testimonialsTitle": "What Our Clients Say",
+    "experiencePage.title": "Case Studies",
+    "experiencePage.titleAccent": "1989 – 2010",
+    "experiencePage.description": "Over 20 years of workforce execution experience in complex Oil & Gas environments across Venezuela.",
     "experiencePage.ctaTitle": "Ready to Experience the Difference?",
     "experiencePage.ctaDescription": "Join the ranks of leading energy companies who trust APOYOMAN with their critical business operations.",
     "experiencePage.ctaButton": "Get in Touch",
+
+    // Experience Stats
+    "exp.stat.years": "Years of Execution Experience",
+    "exp.stat.majorProjects": "Major Projects",
+    "exp.stat.workers": "Workers Managed at Peak",
+    "exp.stat.founded": "Year Founded",
+
+    // Case Studies Section
+    "exp.caseStudies.badge": "Case Studies",
+    "exp.caseStudies.title": "Projects That Define Our Experience",
+    "exp.caseStudies.subtitle": "Real-world workforce execution across Venezuela's most demanding Oil & Gas operations.",
+
+    // Labels
+    "exp.label.context": "Project Context",
+    "exp.label.role": "Apoyoman's Role",
+    "exp.label.challenge": "Operational Challenge",
+    "exp.label.outcome": "Outcome",
+
+    // Petrozuata
+    "exp.petrozuata.name": "Petrozuata",
+    "exp.petrozuata.subtitle": "Large-Scale Workforce Execution for a Landmark Heavy Oil Project",
+    "exp.petrozuata.context": "Petrozuata was one of the first strategic associations formed during Venezuela's oil sector opening in the 1990s. Established in 1996 as a joint venture between PDVSA and ConocoPhillips, focused on production, upgrading, and commercialization of extra-heavy crude from the Orinoco Belt.",
+    "exp.petrozuata.role": "Workforce recruitment and deployment, payroll administration and statutory labor compliance, management of salaries, benefits, and social obligations, housing assistance, per diems, and logistical support. At peak: ~300 workers supporting field operations and upgrader construction.",
+    "exp.petrozuata.challenge": "The project required rapid mobilization and sustained management of a large workforce across multiple phases, including oilfield operations, pipeline construction, and upgrader construction.",
+    "exp.petrozuata.outcome": "Apoyoman enabled Petrozuata to scale and manage its workforce efficiently throughout construction and operational ramp-up phases, allowing the operator to focus on technical execution while mitigating labor and administrative risk.",
+
+    // Ameriven
+    "exp.ameriven.name": "Ameriven",
+    "exp.ameriven.subtitle": "Scaling Workforce Operations Across a Multi-Partner Oil & Gas Consortium",
+    "exp.ameriven.context": "Ameriven was a strategic association formed in the early 2000s between ChevronTexaco, ConocoPhillips, and PDVSA. The project focused on the extraction and upgrading of extra-heavy crude from the Orinoco Belt, with an estimated production capacity of approximately 180,000 barrels per day.",
+    "exp.ameriven.role": "Workforce outsourcing services throughout project phases, supply of ~350 workers including field personnel, technical staff, and administrative support, payroll management and labor compliance, worker support services.",
+    "exp.ameriven.challenge": "Ameriven required a scalable and flexible workforce capable of supporting multiple stages of construction and development, while operating under a multi-partner governance structure and strict labor regulations.",
+    "exp.ameriven.outcome": "Apoyoman enabled Ameriven to maintain workforce continuity and regulatory compliance across project phases, supporting efficient execution in a complex consortium environment.",
+
+    // Sincor
+    "exp.sincor.name": "Sincor",
+    "exp.sincor.subtitle": "Workforce Management for an International Heavy Oil Upgrading Project",
+    "exp.sincor.context": "Sincor (Sincrudos de Oriente) was a strategic association formed between TotalEnergies, Statoil (now Equinor), and PDVSA. The project focused on extraction and upgrading of extra-heavy crude from the Orinoco Belt, with upgrader facilities in José, Anzoátegui, designed for ~200,000 barrels per day capacity.",
+    "exp.sincor.role": "Supply of ~320 workers during construction and development phases, payroll management and statutory benefits administration, operational support to field and upgrader teams.",
+    "exp.sincor.challenge": "The project required coordination of a large workforce across extraction and upgrading facilities, ensuring alignment between international partners while maintaining strict compliance with local labor regulations.",
+    "exp.sincor.outcome": "Apoyoman supported workforce stability and regulatory compliance throughout critical construction phases, contributing to the project's execution efficiency.",
+
+    // Maraven & PDVSA Affiliates
+    "exp.maraven.name": "Maraven & PDVSA Affiliates",
+    "exp.maraven.subtitle": "Building a National Workforce Platform for Oil & Gas Operations",
+    "exp.maraven.context": "Apoyoman's origins date back to 1989, when the company was founded as Servicios Apoyoman, initially providing technical and administrative personnel to Maraven, a PDVSA subsidiary. Over time, services expanded to other PDVSA affiliates, including Corpoven, Lagoven, CIED, and PDVSA corporate operations.",
+    "exp.maraven.role": "Expansion from Caracas base to multiple regions. Coverage: Zulia, Falcón, Carabobo, Anzoátegui, and Monagas. Workforce outsourcing and labor administration services. Support for oil and gas operations nationwide.",
+    "exp.maraven.challenge": "Supporting Venezuela's state oil company required building a scalable workforce platform capable of serving diverse operational needs across multiple regions and business units.",
+    "exp.maraven.outcome": "These projects established the operational foundation of Apoyoman's workforce platform, enabling scalable execution across Venezuela's oil and gas sector.",
+
+    // OTAC
+    "exp.otac.name": "OTAC",
+    "exp.otac.subtitle": "Rapid Workforce Deployment for a High-Sensitivity Government Operation",
+    "exp.otac.context": "The Office for Foreign Exchange Administration (OTAC) was created in 1992 during the administration of President Rafael Caldera to manage Venezuela's foreign exchange control system. The institution operated under significant regulatory and political pressure.",
+    "exp.otac.role": "Supply and administration of ~200 employees across all organizational levels, recruitment and selection, payroll administration, workforce coordination during entire institutional life.",
+    "exp.otac.challenge": "The project required rapid deployment of a complete workforce across all organizational levels, with the flexibility to scale up and down based on institutional needs, all while maintaining operational continuity.",
+    "exp.otac.outcome": "Apoyoman enabled OTAC to operate efficiently throughout its mandate, managing workforce scale-up and eventual scale-down without operational disruption.",
+
+    // Summary Table
+    "exp.summary.badge": "Track Record",
+    "exp.summary.title": "Track Record Summary",
+    "exp.summary.tagline": "20+ Years of Execution Experience in Complex Environments",
+    "exp.table.project": "Project",
+    "exp.table.partners": "Partners",
+    "exp.table.workers": "Workers",
+    "exp.table.period": "Period",
 
     // About Page
     "aboutPage.badge": "About APOYOMAN",
@@ -288,20 +347,79 @@ const translations: Record<Language, Record<string, string>> = {
     "servicesPage.ctaButton": "Contáctanos",
 
     // Experience Page
-    "experiencePage.badge": "Nuestro Historial",
-    "experiencePage.title": "15+ Años de",
-    "experiencePage.titleAccent": "Excelencia en la Industria",
-    "experiencePage.description": "Una historia comprobada de brindar servicios financieros y de RH excepcionales al sector de petróleo y gas.",
-    "experiencePage.journeyBadge": "Nuestro Recorrido",
-    "experiencePage.journeyTitle": "Hitos Que Nos Definen",
-    "experiencePage.industriesBadge": "Sectores Que Servimos",
-    "experiencePage.industriesTitle": "Experiencia Profunda en Energía",
-    "experiencePage.industriesDescription": "Nuestro conocimiento especializado abarca toda la cadena de valor energética, desde la exploración hasta la distribución.",
-    "experiencePage.testimonialsBadge": "Testimonios de Clientes",
-    "experiencePage.testimonialsTitle": "Lo Que Dicen Nuestros Clientes",
+    "experiencePage.badge": "Nuestra Trayectoria",
+    "experiencePage.title": "Casos de Estudio",
+    "experiencePage.titleAccent": "1989 – 2010",
+    "experiencePage.description": "Más de 20 años de experiencia en ejecución de fuerza laboral en entornos complejos de Petróleo y Gas en Venezuela.",
     "experiencePage.ctaTitle": "¿Listo para Experimentar la Diferencia?",
-    "experiencePage.ctaDescription": "Únete a las filas de empresas energéticas líderes que confían en APOYOMAN para sus operaciones comerciales críticas.",
+    "experiencePage.ctaDescription": "Únete a las empresas energéticas líderes que confían en APOYOMAN para sus operaciones críticas.",
     "experiencePage.ctaButton": "Ponte en Contacto",
+
+    // Experience Stats
+    "exp.stat.years": "Años de Experiencia en Ejecución",
+    "exp.stat.majorProjects": "Proyectos Principales",
+    "exp.stat.workers": "Trabajadores Gestionados en Pico",
+    "exp.stat.founded": "Año de Fundación",
+
+    // Case Studies Section
+    "exp.caseStudies.badge": "Casos de Estudio",
+    "exp.caseStudies.title": "Proyectos Que Definen Nuestra Experiencia",
+    "exp.caseStudies.subtitle": "Ejecución real de fuerza laboral en las operaciones más exigentes del sector petrolero venezolano.",
+
+    // Labels
+    "exp.label.context": "Contexto del Proyecto",
+    "exp.label.role": "Rol de Apoyoman",
+    "exp.label.challenge": "Desafío Operativo",
+    "exp.label.outcome": "Resultado",
+
+    // Petrozuata
+    "exp.petrozuata.name": "Petrozuata",
+    "exp.petrozuata.subtitle": "Ejecución de Fuerza Laboral a Gran Escala para un Proyecto Emblemático de Crudo Pesado",
+    "exp.petrozuata.context": "Petrozuata fue una de las primeras asociaciones estratégicas de la apertura petrolera venezolana en los años 90. Constituida en 1996 entre PDVSA y ConocoPhillips, enfocada en producción, mejoramiento y comercialización de crudo extrapesado de la Faja del Orinoco.",
+    "exp.petrozuata.role": "Reclutamiento y suministro de personal, administración de nómina y cumplimiento laboral, gestión de salarios, beneficios y obligaciones sociales, apoyo en vivienda, viáticos y logística. En pico: ~300 trabajadores en campo y mejorador.",
+    "exp.petrozuata.challenge": "El proyecto requirió movilización rápida y gestión sostenida de una fuerza laboral significativa en múltiples fases: operaciones de campo, construcción de oleoductos y del mejorador.",
+    "exp.petrozuata.outcome": "Apoyoman permitió a Petrozuata escalar y administrar su fuerza laboral eficientemente durante las fases críticas, reduciendo riesgos laborales y administrativos.",
+
+    // Ameriven
+    "exp.ameriven.name": "Ameriven",
+    "exp.ameriven.subtitle": "Escalamiento de Operaciones de Personal en un Consorcio Petrolero Multi-Socio",
+    "exp.ameriven.context": "Ameriven fue una asociación estratégica constituida a inicios de los años 2000 entre ChevronTexaco, ConocoPhillips y PDVSA. El proyecto se enfocó en extracción y mejoramiento de crudo extrapesado de la Faja del Orinoco, con capacidad estimada de ~180,000 barriles diarios.",
+    "exp.ameriven.role": "Servicios de outsourcing durante las fases del proyecto, suministro de ~350 trabajadores: campo, técnico y administrativo, administración de nómina y cumplimiento laboral, servicios de soporte al trabajador.",
+    "exp.ameriven.challenge": "El proyecto requirió una fuerza laboral escalable y flexible para las distintas etapas de construcción y desarrollo, bajo estructura de múltiples socios y estrictos requerimientos laborales.",
+    "exp.ameriven.outcome": "Apoyoman permitió a Ameriven mantener continuidad operativa y cumplimiento regulatorio, facilitando la ejecución en un entorno de consorcio complejo.",
+
+    // Sincor
+    "exp.sincor.name": "Sincor",
+    "exp.sincor.subtitle": "Gestión de Personal para un Proyecto Internacional de Mejoramiento de Crudo Pesado",
+    "exp.sincor.context": "Sincor (Sincrudos de Oriente) fue una asociación entre TotalEnergies, Statoil (hoy Equinor) y PDVSA. El proyecto se enfocó en extracción y mejoramiento de crudo extrapesado de la Faja del Orinoco, con mejorador en José, Anzoátegui, con capacidad de ~200,000 barriles diarios.",
+    "exp.sincor.role": "Suministro de ~320 trabajadores en fases de construcción y desarrollo, administración de nómina y beneficios laborales, soporte operativo a equipos de campo y mejorador.",
+    "exp.sincor.challenge": "El proyecto exigió coordinación de una fuerza laboral significativa entre campos y plantas de mejoramiento, asegurando alineación entre socios internacionales y cumplimiento de la legislación laboral local.",
+    "exp.sincor.outcome": "Apoyoman contribuyó a la estabilidad de la fuerza laboral y cumplimiento regulatorio durante fases críticas, apoyando una ejecución eficiente.",
+
+    // Maraven & PDVSA Affiliates
+    "exp.maraven.name": "Maraven y Filiales PDVSA",
+    "exp.maraven.subtitle": "Construcción de una Plataforma Nacional de Personal para Operaciones Petroleras",
+    "exp.maraven.context": "Los orígenes de Apoyoman se remontan a 1989, fundada como Servicios Apoyoman, suministrando inicialmente personal técnico y administrativo a Maraven, filial de PDVSA. Con el tiempo se expandió a otras filiales: Corpoven, Lagoven, CIED y operaciones corporativas de PDVSA.",
+    "exp.maraven.role": "Expansión desde Caracas a múltiples regiones. Cobertura: Zulia, Falcón, Carabobo, Anzoátegui y Monagas. Servicios de outsourcing y administración laboral. Soporte a operaciones petroleras a nivel nacional.",
+    "exp.maraven.challenge": "Apoyar a la petrolera estatal requirió construir una plataforma de personal escalable, capaz de servir diversas necesidades operativas en múltiples regiones y unidades de negocio.",
+    "exp.maraven.outcome": "Estos proyectos sentaron las bases operativas del modelo de Apoyoman, permitiendo ejecución escalable en el sector petrolero venezolano.",
+
+    // OTAC
+    "exp.otac.name": "OTAC",
+    "exp.otac.subtitle": "Despliegue Rápido de Personal para una Operación Gubernamental de Alta Sensibilidad",
+    "exp.otac.context": "La Oficina Técnica de Administración Cambiaria (OTAC) fue creada en 1992 durante el gobierno de Rafael Caldera para administrar el régimen de control de cambio. Operó bajo alta presión regulatoria y política.",
+    "exp.otac.role": "Suministro y administración de ~200 empleados en todos los niveles, reclutamiento y selección, administración de nómina, coordinación del personal durante toda la vigencia institucional.",
+    "exp.otac.challenge": "El proyecto requirió despliegue rápido de una fuerza laboral completa en todos los niveles organizacionales, con flexibilidad para escalar según las necesidades institucionales.",
+    "exp.otac.outcome": "Apoyoman permitió a OTAC operar eficientemente durante su mandato, gestionando expansión y reducción de personal sin disrupciones operativas.",
+
+    // Summary Table
+    "exp.summary.badge": "Trayectoria",
+    "exp.summary.title": "Resumen de Trayectoria",
+    "exp.summary.tagline": "20+ Años de Experiencia en Ejecución en Entornos Complejos",
+    "exp.table.project": "Proyecto",
+    "exp.table.partners": "Socios",
+    "exp.table.workers": "Trabajadores",
+    "exp.table.period": "Período",
 
     // About Page
     "aboutPage.badge": "Sobre APOYOMAN",

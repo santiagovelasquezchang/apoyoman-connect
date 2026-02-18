@@ -1,77 +1,53 @@
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, Award, Users, Globe, TrendingUp } from "lucide-react";
+import { ArrowRight, Users, Building2, Calendar, MapPin, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const stats = [
-  { value: "15+", labelKey: "hero.stat1.label" },
-  { value: "50+", labelKey: "hero.stat2.label" },
-  { value: "$2B+", label: "Managed Budgets" },
-  { value: "5,000+", label: "Employees Supported" },
-];
-
-const milestones = [
+const caseStudyKeys = [
   {
-    year: "2009",
-    title: "Company Founded",
-    description:
-      "APOYOMAN was established with a vision to provide specialized B2B services to the oil and gas industry.",
+    key: "petrozuata",
+    icon: Building2,
+    workers: "~300",
+    period: "1996–2007",
+    partners: "PDVSA + ConocoPhillips",
   },
   {
-    year: "2012",
-    title: "Regional Expansion",
-    description:
-      "Expanded operations to serve clients across multiple states in the Gulf Coast region.",
+    key: "ameriven",
+    icon: Users,
+    workers: "~350",
+    period: "2000s",
+    partners: "ChevronTexaco + ConocoPhillips + PDVSA",
   },
   {
-    year: "2015",
-    title: "HR Division Launch",
-    description:
-      "Introduced comprehensive HR outsourcing services to complement our financial offerings.",
+    key: "sincor",
+    icon: Briefcase,
+    workers: "~320",
+    period: "2000s",
+    partners: "TotalEnergies + Statoil (Equinor) + PDVSA",
   },
   {
-    year: "2018",
-    title: "50 Client Milestone",
-    description:
-      "Reached 50 active oil & gas clients, establishing ourselves as an industry leader.",
+    key: "maraven",
+    icon: MapPin,
+    workers: "Various",
+    period: "1989–2010",
+    partners: "Maraven, Corpoven, Lagoven, CIED",
   },
   {
-    year: "2021",
-    title: "Technology Integration",
-    description:
-      "Implemented advanced digital solutions for real-time reporting and client dashboards.",
-  },
-  {
-    year: "2024",
-    title: "National Presence",
-    description:
-      "Now serving energy companies nationwide with expanded service capabilities.",
+    key: "otac",
+    icon: Calendar,
+    workers: "~200",
+    period: "1992–1996",
+    partners: "Government of Venezuela",
   },
 ];
 
-const testimonials = [
-  {
-    quote:
-      "APOYOMAN transformed our back-office operations. Their financial expertise and understanding of our industry has been invaluable.",
-    author: "John Martinez",
-    role: "CFO",
-    company: "Gulf Energy Partners",
-  },
-  {
-    quote:
-      "The HR team at APOYOMAN handles our workforce management with precision. It's like having an in-house team at a fraction of the cost.",
-    author: "Sarah Chen",
-    role: "VP Operations",
-    company: "Permian Resources Inc.",
-  },
-  {
-    quote:
-      "Their compliance expertise has saved us from potential regulatory issues multiple times. Truly a trusted partner.",
-    author: "Michael Thompson",
-    role: "Director of Finance",
-    company: "Coastal Petroleum LLC",
-  },
+const trackRecord = [
+  { project: "Petrozuata", partners: "PDVSA + ConocoPhillips", workers: "~300", period: "1996–2007" },
+  { project: "Ameriven", partners: "PDVSA + ChevronTexaco + ConocoPhillips", workers: "~350", period: "2000s" },
+  { project: "Sincor", partners: "PDVSA + TotalEnergies + Statoil", workers: "~320", period: "2000s" },
+  { project: "PDVSA Affiliates", partners: "Maraven, Corpoven, Lagoven, CIED", workers: "Various", period: "1989–2010" },
+  { project: "OTAC", partners: "Government of Venezuela", workers: "~200", period: "1992–1996" },
 ];
 
 export default function Experience() {
@@ -95,167 +71,167 @@ export default function Experience() {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats Bar */}
       <section className="py-12 md:py-16 bg-background border-b border-border">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat) => (
-              <div key={stat.value} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-accent mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-muted-foreground">
-                  {stat.labelKey ? t(stat.labelKey) : stat.label}
-                </div>
+            {[
+              { value: "20+", labelKey: "exp.stat.years" },
+              { value: "5", labelKey: "exp.stat.majorProjects" },
+              { value: "1,370+", labelKey: "exp.stat.workers" },
+              { value: "1989", labelKey: "exp.stat.founded" },
+            ].map((stat) => (
+              <div key={stat.labelKey} className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-accent mb-2">{stat.value}</div>
+                <div className="text-muted-foreground">{t(stat.labelKey)}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Our Journey Timeline */}
+      {/* Case Studies */}
       <section className="section-padding bg-section-light">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
             <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-              {t("experiencePage.journeyBadge")}
+              {t("exp.caseStudies.badge")}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              {t("experiencePage.journeyTitle")}
+              {t("exp.caseStudies.title")}
             </h2>
+            <p className="text-lg text-muted-foreground">
+              {t("exp.caseStudies.subtitle")}
+            </p>
           </div>
 
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-border md:-translate-x-0.5" />
-
-            {/* Milestones */}
-            <div className="space-y-8 md:space-y-12">
-              {milestones.map((milestone, index) => (
-                <div
-                  key={milestone.year}
-                  className={`relative flex flex-col md:flex-row gap-4 md:gap-8 ${
-                    index % 2 === 0 ? "md:flex-row-reverse" : ""
-                  }`}
-                >
-                  {/* Content */}
-                  <div
-                    className={`flex-1 pl-12 md:pl-0 ${
-                      index % 2 === 0 ? "md:text-right md:pr-12" : "md:pl-12"
-                    }`}
-                  >
-                    <div className="bg-card rounded-xl border border-border p-6 inline-block text-left">
-                      <span className="text-accent font-bold text-lg">
-                        {milestone.year}
+          <div className="space-y-8 lg:space-y-12">
+            {caseStudyKeys.map((cs, index) => (
+              <div
+                key={cs.key}
+                className={`bg-card rounded-2xl border border-border overflow-hidden ${
+                  index % 2 === 0 ? "" : ""
+                }`}
+              >
+                <div className="p-6 md:p-10">
+                  {/* Header */}
+                  <div className="flex flex-col md:flex-row md:items-center gap-4 mb-6">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+                        <cs.icon className="w-6 h-6 text-accent" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-foreground">
+                          {t(`exp.${cs.key}.name`)}
+                        </h3>
+                        <p className="text-sm text-muted-foreground">{cs.partners}</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4 md:ml-auto">
+                      <span className="inline-flex items-center gap-1.5 text-sm font-medium text-accent bg-accent/10 px-3 py-1 rounded-full">
+                        <Users className="w-3.5 h-3.5" />
+                        {cs.workers}
                       </span>
-                      <h3 className="text-xl font-semibold text-foreground mt-1 mb-2">
-                        {milestone.title}
-                      </h3>
-                      <p className="text-muted-foreground">
-                        {milestone.description}
-                      </p>
+                      <span className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground bg-muted px-3 py-1 rounded-full">
+                        <Calendar className="w-3.5 h-3.5" />
+                        {cs.period}
+                      </span>
                     </div>
                   </div>
 
-                  {/* Dot */}
-                  <div className="absolute left-4 md:left-1/2 top-6 w-4 h-4 rounded-full bg-accent border-4 border-background -translate-x-1/2" />
+                  {/* Subtitle */}
+                  <p className="text-lg font-medium text-foreground/80 mb-6 italic">
+                    {t(`exp.${cs.key}.subtitle`)}
+                  </p>
 
-                  {/* Spacer for alignment */}
-                  <div className="hidden md:block flex-1" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Industries Served */}
-      <section className="section-padding bg-background">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-                {t("experiencePage.industriesBadge")}
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                {t("experiencePage.industriesTitle")}
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                {t("experiencePage.industriesDescription")}
-              </p>
-
-              <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  { icon: TrendingUp, label: "Upstream Operations" },
-                  { icon: Globe, label: "Midstream Services" },
-                  { icon: Award, label: "Downstream Processing" },
-                  { icon: Users, label: "Oilfield Services" },
-                ].map((item) => (
-                  <div
-                    key={item.label}
-                    className="flex items-center gap-3 p-4 rounded-lg bg-section-light"
-                  >
-                    <item.icon className="h-5 w-5 text-accent" />
-                    <span className="font-medium text-foreground">{item.label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { title: "Drilling Companies", count: "20+" },
-                { title: "Pipeline Operators", count: "12+" },
-                { title: "Refineries", count: "8+" },
-                { title: "Service Providers", count: "15+" },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className="p-6 rounded-xl bg-card border border-border text-center"
-                >
-                  <div className="text-3xl font-bold text-accent mb-2">
-                    {item.count}
-                  </div>
-                  <div className="text-sm text-muted-foreground">{item.title}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="section-padding bg-section-light">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-            <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-              {t("experiencePage.testimonialsBadge")}
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              {t("experiencePage.testimonialsTitle")}
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            {testimonials.map((testimonial) => (
-              <div
-                key={testimonial.author}
-                className="bg-card rounded-xl border border-border p-6 md:p-8"
-              >
-                <blockquote className="text-foreground mb-6 leading-relaxed">
-                  "{testimonial.quote}"
-                </blockquote>
-                <div>
-                  <div className="font-semibold text-foreground">
-                    {testimonial.author}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {testimonial.role}, {testimonial.company}
+                  {/* Content Grid */}
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
+                        {t("exp.label.context")}
+                      </h4>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {t(`exp.${cs.key}.context`)}
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
+                        {t("exp.label.role")}
+                      </h4>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {t(`exp.${cs.key}.role`)}
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
+                        {t("exp.label.challenge")}
+                      </h4>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {t(`exp.${cs.key}.challenge`)}
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
+                        {t("exp.label.outcome")}
+                      </h4>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {t(`exp.${cs.key}.outcome`)}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Track Record Summary Table */}
+      <section className="section-padding bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
+              {t("exp.summary.badge")}
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              {t("exp.summary.title")}
+            </h2>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b-2 border-accent/30">
+                  <th className="text-left py-4 px-4 text-sm font-semibold text-foreground uppercase tracking-wider">
+                    {t("exp.table.project")}
+                  </th>
+                  <th className="text-left py-4 px-4 text-sm font-semibold text-foreground uppercase tracking-wider">
+                    {t("exp.table.partners")}
+                  </th>
+                  <th className="text-left py-4 px-4 text-sm font-semibold text-foreground uppercase tracking-wider">
+                    {t("exp.table.workers")}
+                  </th>
+                  <th className="text-left py-4 px-4 text-sm font-semibold text-foreground uppercase tracking-wider">
+                    {t("exp.table.period")}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {trackRecord.map((row) => (
+                  <tr key={row.project} className="border-b border-border hover:bg-section-light transition-colors">
+                    <td className="py-4 px-4 font-semibold text-foreground">{row.project}</td>
+                    <td className="py-4 px-4 text-muted-foreground">{row.partners}</td>
+                    <td className="py-4 px-4 text-accent font-semibold">{row.workers}</td>
+                    <td className="py-4 px-4 text-muted-foreground">{row.period}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <p className="text-center text-lg font-semibold text-foreground mt-8">
+            {t("exp.summary.tagline")}
+          </p>
         </div>
       </section>
 
