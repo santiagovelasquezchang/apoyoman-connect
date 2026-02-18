@@ -1,60 +1,45 @@
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, Target, Eye, Heart, Shield } from "lucide-react";
+import {
+  ArrowRight,
+  Target,
+  Eye,
+  Shield,
+  Users,
+  Briefcase,
+  Building2,
+  CheckCircle,
+  Zap,
+  Globe,
+  FileText,
+  Truck,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-
-const team = [
-  {
-    name: "Robert Anderson",
-    role: "Chief Executive Officer",
-    bio: "25+ years in oil & gas industry leadership. Previously VP at major energy corporation.",
-  },
-  {
-    name: "Maria Santos",
-    role: "Chief Financial Officer",
-    bio: "CPA with 20 years experience in energy sector financial management and compliance.",
-  },
-  {
-    name: "James Mitchell",
-    role: "Director of HR Services",
-    bio: "HR executive with extensive experience in workforce management for oil & gas companies.",
-  },
-  {
-    name: "Linda Patel",
-    role: "Director of Operations",
-    bio: "Operations specialist focused on streamlining back-office processes for energy clients.",
-  },
-];
 
 export default function About() {
   const { t } = useLanguage();
 
+  const services = [
+    { icon: Users, titleKey: "about.service1.title", descKey: "about.service1.desc" },
+    { icon: Briefcase, titleKey: "about.service2.title", descKey: "about.service2.desc" },
+    { icon: FileText, titleKey: "about.service3.title", descKey: "about.service3.desc" },
+    { icon: Truck, titleKey: "about.service4.title", descKey: "about.service4.desc" },
+  ];
+
+  const advantages = [
+    { icon: Shield, titleKey: "about.adv1.title", descKey: "about.adv1.desc" },
+    { icon: Zap, titleKey: "about.adv2.title", descKey: "about.adv2.desc" },
+    { icon: Globe, titleKey: "about.adv3.title", descKey: "about.adv3.desc" },
+    { icon: Building2, titleKey: "about.adv4.title", descKey: "about.adv4.desc" },
+    { icon: CheckCircle, titleKey: "about.adv5.title", descKey: "about.adv5.desc" },
+  ];
+
   const values = [
-    {
-      icon: Shield,
-      title: "Integrity",
-      description:
-        "We uphold the highest ethical standards in all our business relationships and operations.",
-    },
-    {
-      icon: Target,
-      title: "Excellence",
-      description:
-        "We strive for excellence in every service we provide, continuously improving our processes.",
-    },
-    {
-      icon: Heart,
-      title: "Partnership",
-      description:
-        "We view our clients as partners, investing in their success as if it were our own.",
-    },
-    {
-      icon: Eye,
-      title: "Transparency",
-      description:
-        "We maintain open communication and clear reporting in all our client relationships.",
-    },
+    { icon: Shield, titleKey: "about.val1.title", descKey: "about.val1.desc" },
+    { icon: Target, titleKey: "about.val2.title", descKey: "about.val2.desc" },
+    { icon: Eye, titleKey: "about.val3.title", descKey: "about.val3.desc" },
+    { icon: Users, titleKey: "about.val4.title", descKey: "about.val4.desc" },
   ];
 
   return (
@@ -75,11 +60,62 @@ export default function About() {
         </div>
       </section>
 
-      {/* Mission & Vision */}
+      {/* What is Apoyoman 2.0 */}
       <section className="section-padding bg-background">
         <div className="container mx-auto px-4 md:px-6">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
+                {t("about.whatBadge")}
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                {t("about.whatTitle")}
+              </h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>{t("about.whatP1")}</p>
+                <p>{t("about.whatP2")}</p>
+              </div>
+
+              {/* Key facts */}
+              <div className="grid grid-cols-2 gap-4 mt-8">
+                {[
+                  { value: "1989", labelKey: "about.fact.founded" },
+                  { value: "20+", labelKey: "about.fact.years" },
+                  { value: "300+", labelKey: "about.fact.workers" },
+                  { value: "5+", labelKey: "about.fact.projects" },
+                ].map((fact) => (
+                  <div key={fact.labelKey} className="bg-section-light rounded-xl p-4 text-center">
+                    <div className="text-2xl font-bold text-accent">{fact.value}</div>
+                    <div className="text-sm text-muted-foreground">{t(fact.labelKey)}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Visual Element */}
+            <div className="relative">
+              <div className="aspect-[4/3] rounded-2xl gradient-overlay p-8 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="text-5xl md:text-6xl font-bold text-accent mb-2">
+                    1989
+                  </div>
+                  <p className="text-xl text-primary-foreground font-semibold mb-1">
+                    {t("about.established")}
+                  </p>
+                  <p className="text-primary-foreground/70 text-sm max-w-xs mx-auto">
+                    {t("about.establishedSub")}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="section-padding bg-section-light">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-            {/* Mission */}
             <div className="bg-card rounded-2xl border border-border p-8 md:p-10">
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-accent/10 mb-6">
                 <Target className="h-6 w-6 text-accent" />
@@ -92,7 +128,6 @@ export default function About() {
               </p>
             </div>
 
-            {/* Vision */}
             <div className="bg-card rounded-2xl border border-border p-8 md:p-10">
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-accent/10 mb-6">
                 <Eye className="h-6 w-6 text-accent" />
@@ -108,37 +143,62 @@ export default function About() {
         </div>
       </section>
 
-      {/* Our Story */}
+      {/* Core Services */}
+      <section className="section-padding bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
+              {t("about.servicesBadge")}
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              {t("about.servicesTitle")}
+            </h2>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((svc) => (
+              <div
+                key={svc.titleKey}
+                className="text-center p-6 rounded-xl bg-card border border-border hover:border-accent/50 transition-colors"
+              >
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent/10 mb-4">
+                  <svc.icon className="h-7 w-7 text-accent" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  {t(svc.titleKey)}
+                </h3>
+                <p className="text-muted-foreground text-sm">{t(svc.descKey)}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Competitive Advantages */}
       <section className="section-padding bg-section-light">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-                {t("aboutPage.storyBadge")}
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                {t("aboutPage.storyTitle")}
-              </h2>
-              <div className="space-y-4 text-muted-foreground">
-                <p>{t("aboutPage.storyP1")}</p>
-                <p>{t("aboutPage.storyP2")}</p>
-                <p>{t("aboutPage.storyP3")}</p>
-              </div>
-            </div>
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
+              {t("about.advBadge")}
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              {t("about.advTitle")}
+            </h2>
+          </div>
 
-            {/* Visual Element */}
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl gradient-overlay p-8 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-5xl md:text-6xl font-bold text-accent mb-2">
-                    2009
-                  </div>
-                  <p className="text-xl text-primary-foreground">
-                    Established & Serving the Industry
-                  </p>
-                </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {advantages.map((adv) => (
+              <div
+                key={adv.titleKey}
+                className="p-6 rounded-xl bg-card border border-border"
+              >
+                <adv.icon className="h-8 w-8 text-accent mb-4" />
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  {t(adv.titleKey)}
+                </h3>
+                <p className="text-muted-foreground text-sm">{t(adv.descKey)}</p>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -158,61 +218,28 @@ export default function About() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value) => (
               <div
-                key={value.title}
+                key={value.titleKey}
                 className="text-center p-6 rounded-xl bg-card border border-border hover:border-accent/50 transition-colors"
               >
                 <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent/10 mb-4">
                   <value.icon className="h-7 w-7 text-accent" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-2">
-                  {value.title}
+                  {t(value.titleKey)}
                 </h3>
-                <p className="text-muted-foreground text-sm">
-                  {value.description}
-                </p>
+                <p className="text-muted-foreground text-sm">{t(value.descKey)}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Leadership Team */}
-      <section id="team" className="section-padding bg-section-light">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-            <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-              {t("aboutPage.teamBadge")}
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              {t("aboutPage.teamTitle")}
-            </h2>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {team.map((member) => (
-              <div
-                key={member.name}
-                className="bg-card rounded-xl border border-border p-6 text-center"
-              >
-                {/* Avatar Placeholder */}
-                <div className="w-24 h-24 rounded-full bg-primary mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-primary-foreground">
-                    {member.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </span>
-                </div>
-                <h3 className="text-lg font-semibold text-foreground mb-1">
-                  {member.name}
-                </h3>
-                <p className="text-sm text-accent font-medium mb-3">
-                  {member.role}
-                </p>
-                <p className="text-sm text-muted-foreground">{member.bio}</p>
-              </div>
-            ))}
-          </div>
+      {/* Tagline */}
+      <section className="py-16 bg-section-light">
+        <div className="container mx-auto px-4 md:px-6 text-center">
+          <blockquote className="text-2xl md:text-3xl font-bold text-foreground italic max-w-3xl mx-auto">
+            "{t("about.tagline")}"
+          </blockquote>
         </div>
       </section>
 
