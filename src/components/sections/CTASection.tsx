@@ -2,13 +2,18 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import ctaBg from "@/assets/cta-bg.jpg";
 
 export function CTASection() {
   const { t } = useLanguage();
 
   return (
-    <section className="py-20 md:py-28 bg-primary">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="relative py-20 md:py-28 overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <img src={ctaBg} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-primary/80" />
+      </div>
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-5 leading-tight">
             {t("cta.title")}

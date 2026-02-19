@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import heroBg from "@/assets/hero-bg.jpg";
 
 export function HeroSection() {
   const { t } = useLanguage();
@@ -22,8 +23,12 @@ export function HeroSection() {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center bg-primary">
-      <div className="container mx-auto px-4 md:px-6 pt-28 pb-20 md:pt-36 md:pb-28">
+    <section className="relative min-h-screen flex items-center">
+      <div className="absolute inset-0 z-0">
+        <img src={heroBg} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-primary/85" />
+      </div>
+      <div className="container mx-auto px-4 md:px-6 pt-28 pb-20 md:pt-36 md:pb-28 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-start">
           {/* Left — Content */}
           <div className="animate-fade-in">

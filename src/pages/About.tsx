@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import aboutBg from "@/assets/about-bg.jpg";
+import ctaBg from "@/assets/cta-bg.jpg";
 
 export default function About() {
   const { t } = useLanguage();
@@ -45,8 +47,12 @@ export default function About() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-24 pb-16 md:pt-32 md:pb-20 gradient-overlay">
-        <div className="container mx-auto px-4 md:px-6 text-center">
+      <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={aboutBg} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-primary/80" />
+        </div>
+        <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
           <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
             {t("aboutPage.badge")}
           </span>
@@ -94,17 +100,20 @@ export default function About() {
 
             {/* Visual Element */}
             <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl gradient-overlay p-8 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-5xl md:text-6xl font-bold text-accent mb-2">
-                    1989
+              <div className="aspect-[4/3] rounded-xl overflow-hidden relative">
+                <img src={aboutBg} alt="Oil platform aerial view" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-primary/60 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-5xl md:text-6xl font-bold text-accent mb-2">
+                      1989
+                    </div>
+                    <p className="text-xl text-primary-foreground font-semibold mb-1">
+                      {t("about.established")}
+                    </p>
+                    <p className="text-primary-foreground/70 text-sm max-w-xs mx-auto">
+                      {t("about.establishedSub")}
+                    </p>
                   </div>
-                  <p className="text-xl text-primary-foreground font-semibold mb-1">
-                    {t("about.established")}
-                  </p>
-                  <p className="text-primary-foreground/70 text-sm max-w-xs mx-auto">
-                    {t("about.establishedSub")}
-                  </p>
                 </div>
               </div>
             </div>
@@ -244,8 +253,12 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding gradient-overlay">
-        <div className="container mx-auto px-4 md:px-6 text-center">
+      <section className="relative section-padding overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={ctaBg} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-primary/80" />
+        </div>
+        <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
             {t("aboutPage.ctaTitle")}
           </h2>
