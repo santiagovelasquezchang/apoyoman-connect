@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
+import contactBg from "@/assets/contact-bg.jpg";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -75,8 +76,12 @@ export default function Contact() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-24 pb-16 md:pt-32 md:pb-20 gradient-overlay">
-        <div className="container mx-auto px-4 md:px-6 text-center">
+      <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={contactBg} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-primary/80" />
+        </div>
+        <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
           <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
             {t("contactPage.badge")}
           </span>

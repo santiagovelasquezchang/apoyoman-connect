@@ -12,6 +12,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ServiceInquiryForm } from "@/components/forms/ServiceInquiryForm";
+import servicesBg from "@/assets/services-bg.jpg";
+import ctaBg from "@/assets/cta-bg.jpg";
 
 export default function Services() {
   const { t } = useLanguage();
@@ -90,8 +92,12 @@ export default function Services() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-24 pb-16 md:pt-32 md:pb-20 gradient-overlay">
-        <div className="container mx-auto px-4 md:px-6 text-center">
+      <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={servicesBg} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-primary/80" />
+        </div>
+        <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
           <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
             {t("servicesPage.badge")}
           </span>
@@ -218,8 +224,12 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding gradient-overlay">
-        <div className="container mx-auto px-4 md:px-6 text-center">
+      <section className="relative section-padding overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={ctaBg} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-primary/80" />
+        </div>
+        <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
             {t("servicesPage.ctaTitle")}
           </h2>
