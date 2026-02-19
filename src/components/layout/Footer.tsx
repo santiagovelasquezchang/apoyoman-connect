@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import logo from "@/assets/logo.png";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -28,9 +29,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-4">
-              <span className="text-2xl font-bold tracking-tight">
-                APOYO<span className="text-accent">MAN</span>
-              </span>
+              <img src={logo} alt="APOYOMAN" className="h-10 w-auto brightness-0 invert" />
             </Link>
             <p className="text-primary-foreground/80 text-sm leading-relaxed mb-6">
               {t("footer.description")}

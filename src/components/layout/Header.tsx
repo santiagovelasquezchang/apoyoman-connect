@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -43,14 +44,14 @@ export function Header() {
         <nav className="flex items-center justify-between h-14 md:h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <span
+            <img
+              src={logo}
+              alt="APOYOMAN"
               className={cn(
-                "text-lg md:text-xl font-bold tracking-tight transition-colors",
-                isScrolled ? "text-primary" : "text-white"
+                "h-8 md:h-10 w-auto transition-all",
+                isScrolled ? "" : "brightness-0 invert"
               )}
-            >
-              APOYO<span className="text-accent">MAN</span>
-            </span>
+            />
           </Link>
 
           {/* Desktop Navigation */}
