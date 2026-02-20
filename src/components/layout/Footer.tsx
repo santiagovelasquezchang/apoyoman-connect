@@ -14,10 +14,10 @@ export function Footer() {
       { name: t("nav.contact"), href: "/contact" },
     ],
     services: [
-      { name: t("footer.service1"), href: "/services#finance" },
-      { name: t("footer.service2"), href: "/services#hr" },
+      { name: t("footer.service1"), href: "/services#recruiting" },
+      { name: t("footer.service2"), href: "/services#outsourcing" },
       { name: t("footer.service3"), href: "/services#payroll" },
-      { name: t("footer.service4"), href: "/services#compliance" },
+      { name: t("footer.service4"), href: "/services#logistics" },
     ],
   };
 

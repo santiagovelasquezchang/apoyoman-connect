@@ -34,10 +34,10 @@ export function ServiceInquiryForm({ sourcePage, preselectedService }: ServiceIn
   });
 
   const services = [
-    { value: "administrative", label: t("services.administrative.title") },
-    { value: "accounting", label: t("services.accounting.title") },
-    { value: "compliance", label: t("services.compliance.title") },
-    { value: "staffing", label: t("services.staffing.title") },
+    { value: "recruiting", label: t("services.recruiting.dropdown") },
+    { value: "outsourcing", label: t("services.outsourcing.dropdown") },
+    { value: "payroll", label: t("services.payroll.dropdown") },
+    { value: "logistics", label: t("services.logistics.dropdown") },
   ];
 
   const handleChange = (

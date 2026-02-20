@@ -44,17 +44,17 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Services Preview
     "services.badge": "Our Services",
-    "services.title": "Comprehensive Business Solutions",
-    "services.description": "We provide end-to-end financial and HR services designed specifically for the unique demands of the oil and gas industry.",
+    "services.title": "Workforce Solutions for Oil & Gas",
+    "services.description": "End-to-end workforce execution for energy projects in Venezuela — recruitment, outsourcing, payroll, and field logistics under one contract.",
     "services.viewAll": "View All Services",
-    "services.financial.title": "Financial Management",
-    "services.financial.description": "Complete financial oversight including accounting, reporting, budgeting, and strategic financial planning for energy sector operations.",
-    "services.hr.title": "HR Outsourcing",
-    "services.hr.description": "Full-service human resources management from recruitment and onboarding to benefits administration and employee relations.",
-    "services.payroll.title": "Payroll Services",
-    "services.payroll.description": "Accurate, compliant payroll processing with expertise in oil & gas compensation structures, per diems, and field allowances.",
-    "services.compliance.title": "Regulatory Compliance",
-    "services.compliance.description": "Navigate complex industry regulations with confidence. We ensure your operations meet all federal, state, and local requirements.",
+    "services.recruiting.title": "Headhunting & Technical Recruiting",
+    "services.recruiting.description": "Specialized recruitment and selection of qualified personnel across all organizational levels for oil, gas, and energy projects.",
+    "services.outsourcing.title": "Staff Outsourcing",
+    "services.outsourcing.description": "Full workforce outsourcing with complete labor coverage and compliance — so operators can focus on production, not paperwork.",
+    "services.payroll.title": "Payroll & Labor Compliance",
+    "services.payroll.description": "Compliant payroll processing under Venezuelan labor law, including statutory benefits, social obligations, and regulatory reporting.",
+    "services.logistics.title": "Logistics & Site Services",
+    "services.logistics.description": "On-the-ground coordination for housing, transportation, per diems, and site logistics wherever the project operates.",
 
     // Why Choose Us
     "why.badge": "Why APOYOMAN",
@@ -79,21 +79,21 @@ const translations: Record<Language, Record<string, string>> = {
     "cta.call": "Or call us at",
 
     // Footer
-    "footer.description": "Specialized financial management and HR outsourcing solutions for the oil and gas industry. Your trusted partner in operational excellence.",
+    "footer.description": "Specialized workforce solutions for the oil and gas industry — recruitment, outsourcing, payroll, and field logistics under one contract.",
     "footer.quickLinks": "Quick Links",
     "footer.services": "Services",
     "footer.contact": "Contact Us",
     "footer.rights": "All rights reserved.",
-    "footer.service1": "Financial Management",
-    "footer.service2": "HR Outsourcing",
-    "footer.service3": "Payroll Services",
-    "footer.service4": "Compliance",
+    "footer.service1": "Headhunting & Recruiting",
+    "footer.service2": "Staff Outsourcing",
+    "footer.service3": "Payroll & Compliance",
+    "footer.service4": "Logistics & Site Services",
 
     // Services Page
     "servicesPage.badge": "What We Offer",
-    "servicesPage.title": "Specialized Services for",
-    "servicesPage.titleAccent": "Oil & Gas Industry",
-    "servicesPage.description": "Comprehensive financial and HR solutions tailored to meet the unique demands of energy sector operations.",
+    "servicesPage.title": "Workforce Solutions for",
+    "servicesPage.titleAccent": "Oil & Gas Operations",
+    "servicesPage.description": "End-to-end workforce execution for energy projects in Venezuela — recruitment, outsourcing, payroll, and field logistics under one contract.",
     "servicesPage.consultation": "Request a Consultation",
     "servicesPage.features": "Key Features",
     "servicesPage.ctaTitle": "Need a Custom Solution?",
@@ -205,14 +205,14 @@ const translations: Record<Language, Record<string, string>> = {
     // About - Services
     "about.servicesBadge": "What We Do",
     "about.servicesTitle": "Our Core Services",
-    "about.service1.title": "Headhunting & Recruiting",
-    "about.service1.desc": "Specialized technical selection across all organizational levels for energy and infrastructure projects.",
+    "about.service1.title": "Headhunting & Technical Recruiting",
+    "about.service1.desc": "Specialized recruitment and selection of qualified personnel across all organizational levels for oil, gas, and energy projects.",
     "about.service2.title": "Staff Outsourcing",
-    "about.service2.desc": "Operational, technical, and administrative personnel with full coverage and labor compliance.",
-    "about.service3.title": "Integral Labor Management",
-    "about.service3.desc": "Social benefits, statutory compliance, payroll administration, and full legal labor coverage guaranteed.",
+    "about.service2.desc": "Full workforce outsourcing with complete labor coverage and compliance — so operators can focus on production, not paperwork.",
+    "about.service3.title": "Payroll & Labor Compliance",
+    "about.service3.desc": "Compliant payroll processing under Venezuelan labor law, including statutory benefits, social obligations, and regulatory reporting.",
     "about.service4.title": "Logistics & Site Services",
-    "about.service4.desc": "Transportation, housing, per diems, and contractor coordination for field operations.",
+    "about.service4.desc": "On-the-ground coordination for housing, transportation, per diems, and site logistics wherever the project operates.",
 
     // About - Competitive Advantages
     "about.advBadge": "Why Us",
@@ -297,9 +297,10 @@ const translations: Record<Language, Record<string, string>> = {
     "serviceForm.submitInquiry": "Submit Inquiry",
 
     // Service Categories for dropdown
-    "services.administrative.title": "Administrative Services",
-    "services.accounting.title": "Accounting & Finance",
-    "services.staffing.title": "Staffing Solutions",
+    "services.recruiting.dropdown": "Headhunting & Technical Recruiting",
+    "services.outsourcing.dropdown": "Staff Outsourcing",
+    "services.payroll.dropdown": "Payroll & Labor Compliance",
+    "services.logistics.dropdown": "Logistics & Site Services",
   },
   es: {
     // Navigation
@@ -334,17 +335,17 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Services Preview
     "services.badge": "Nuestros Servicios",
-    "services.title": "Soluciones Empresariales Integrales",
-    "services.description": "Proporcionamos servicios financieros y de recursos humanos de extremo a extremo, diseñados específicamente para las demandas únicas de la industria del petróleo y gas.",
+    "services.title": "Soluciones de Fuerza Laboral para Petróleo y Gas",
+    "services.description": "Ejecución integral de fuerza laboral para proyectos energéticos en Venezuela — reclutamiento, outsourcing, nómina y logística de campo bajo un solo contrato.",
     "services.viewAll": "Ver Todos los Servicios",
-    "services.financial.title": "Gestión Financiera",
-    "services.financial.description": "Supervisión financiera completa que incluye contabilidad, informes, presupuestos y planificación financiera estratégica para operaciones del sector energético.",
-    "services.hr.title": "Outsourcing de RH",
-    "services.hr.description": "Gestión integral de recursos humanos desde reclutamiento e incorporación hasta administración de beneficios y relaciones laborales.",
-    "services.payroll.title": "Servicios de Nómina",
-    "services.payroll.description": "Procesamiento de nómina preciso y conforme con experiencia en estructuras de compensación de petróleo y gas, viáticos y asignaciones de campo.",
-    "services.compliance.title": "Cumplimiento Regulatorio",
-    "services.compliance.description": "Navega regulaciones complejas de la industria con confianza. Aseguramos que tus operaciones cumplan con todos los requisitos federales, estatales y locales.",
+    "services.recruiting.title": "Headhunting y Reclutamiento Técnico",
+    "services.recruiting.description": "Reclutamiento y selección especializada de personal calificado en todos los niveles organizacionales para proyectos de petróleo, gas y energía.",
+    "services.outsourcing.title": "Outsourcing de Personal",
+    "services.outsourcing.description": "Outsourcing integral de fuerza laboral con cobertura y cumplimiento laboral completo — para que los operadores se concentren en producción, no en papeleo.",
+    "services.payroll.title": "Nómina y Cumplimiento Laboral",
+    "services.payroll.description": "Procesamiento de nómina conforme a la legislación laboral venezolana, incluyendo prestaciones sociales, obligaciones y reportes regulatorios.",
+    "services.logistics.title": "Logística y Site Services",
+    "services.logistics.description": "Coordinación en campo de vivienda, transporte, viáticos y logística operativa donde el proyecto lo requiera.",
 
     // Why Choose Us
     "why.badge": "Por Qué APOYOMAN",
@@ -369,21 +370,21 @@ const translations: Record<Language, Record<string, string>> = {
     "cta.call": "O llámanos al",
 
     // Footer
-    "footer.description": "Soluciones especializadas de gestión financiera y outsourcing de RH para la industria del petróleo y gas. Tu socio de confianza en excelencia operativa.",
+    "footer.description": "Soluciones especializadas de fuerza laboral para la industria del petróleo y gas — reclutamiento, outsourcing, nómina y logística de campo bajo un solo contrato.",
     "footer.quickLinks": "Enlaces Rápidos",
     "footer.services": "Servicios",
     "footer.contact": "Contáctanos",
     "footer.rights": "Todos los derechos reservados.",
-    "footer.service1": "Gestión Financiera",
-    "footer.service2": "Outsourcing de RH",
-    "footer.service3": "Servicios de Nómina",
-    "footer.service4": "Cumplimiento",
+    "footer.service1": "Headhunting y Reclutamiento",
+    "footer.service2": "Outsourcing de Personal",
+    "footer.service3": "Nómina y Cumplimiento",
+    "footer.service4": "Logística y Site Services",
 
     // Services Page
     "servicesPage.badge": "Lo Que Ofrecemos",
-    "servicesPage.title": "Servicios Especializados para la",
-    "servicesPage.titleAccent": "Industria de Petróleo y Gas",
-    "servicesPage.description": "Soluciones financieras y de RH integrales adaptadas para satisfacer las demandas únicas de las operaciones del sector energético.",
+    "servicesPage.title": "Soluciones de Fuerza Laboral para",
+    "servicesPage.titleAccent": "Operaciones de Petróleo y Gas",
+    "servicesPage.description": "Ejecución integral de fuerza laboral para proyectos energéticos en Venezuela — reclutamiento, outsourcing, nómina y logística de campo bajo un solo contrato.",
     "servicesPage.consultation": "Solicitar Consulta",
     "servicesPage.features": "Características Principales",
     "servicesPage.ctaTitle": "¿Necesitas una Solución Personalizada?",
@@ -495,14 +496,14 @@ const translations: Record<Language, Record<string, string>> = {
     // About - Services
     "about.servicesBadge": "Lo Que Hacemos",
     "about.servicesTitle": "Nuestros Servicios Principales",
-    "about.service1.title": "Headhunting y Reclutamiento",
-    "about.service1.desc": "Selección técnica especializada en todos los niveles organizacionales para proyectos de energía e infraestructura.",
+    "about.service1.title": "Headhunting y Reclutamiento Técnico",
+    "about.service1.desc": "Reclutamiento y selección especializada de personal calificado en todos los niveles organizacionales para proyectos de petróleo, gas y energía.",
     "about.service2.title": "Outsourcing de Personal",
-    "about.service2.desc": "Personal operativo, técnico y administrativo con cobertura completa y cumplimiento laboral.",
-    "about.service3.title": "Gestión Laboral Integral",
-    "about.service3.desc": "Prestaciones sociales, cumplimiento legal, administración de nómina y cobertura laboral garantizada.",
+    "about.service2.desc": "Outsourcing integral de fuerza laboral con cobertura y cumplimiento laboral completo — para que los operadores se concentren en producción, no en papeleo.",
+    "about.service3.title": "Nómina y Cumplimiento Laboral",
+    "about.service3.desc": "Procesamiento de nómina conforme a la legislación laboral venezolana, incluyendo prestaciones sociales, obligaciones y reportes regulatorios.",
     "about.service4.title": "Logística y Site Services",
-    "about.service4.desc": "Transporte, vivienda, viáticos y coordinación de contratistas para operaciones de campo.",
+    "about.service4.desc": "Coordinación en campo de vivienda, transporte, viáticos y logística operativa donde el proyecto lo requiera.",
 
     // About - Competitive Advantages
     "about.advBadge": "Por Qué Nosotros",
@@ -587,9 +588,10 @@ const translations: Record<Language, Record<string, string>> = {
     "serviceForm.submitInquiry": "Enviar Consulta",
 
     // Service Categories for dropdown
-    "services.administrative.title": "Servicios Administrativos",
-    "services.accounting.title": "Contabilidad y Finanzas",
-    "services.staffing.title": "Soluciones de Personal",
+    "services.recruiting.dropdown": "Headhunting y Reclutamiento Técnico",
+    "services.outsourcing.dropdown": "Outsourcing de Personal",
+    "services.payroll.dropdown": "Nómina y Cumplimiento Laboral",
+    "services.logistics.dropdown": "Logística y Site Services",
   },
 };
 
