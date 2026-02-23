@@ -37,7 +37,6 @@ export function ServiceInquiryForm({ sourcePage, preselectedService }: ServiceIn
     { value: "recruiting", label: t("services.recruiting.dropdown") },
     { value: "outsourcing", label: t("services.outsourcing.dropdown") },
     { value: "payroll", label: t("services.payroll.dropdown") },
-    { value: "logistics", label: t("services.logistics.dropdown") },
   ];
 
   const handleChange = (

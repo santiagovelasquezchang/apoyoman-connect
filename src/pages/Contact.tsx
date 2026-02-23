@@ -218,17 +218,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Map Section Placeholder */}
-      <section className="h-80 md:h-96 bg-section-light relative">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <MapPin className="h-12 w-12 text-accent mx-auto mb-4" />
-            <p className="text-muted-foreground">
-              {t("contactPage.mapTitle")}
-            </p>
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 }
