@@ -3,33 +3,23 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { cn } from "@/lib/utils";
+import { FlipCard } from "@/components/ui/FlipCard";
 
 export function ServicesPreview() {
   const { t } = useLanguage();
-  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation<HTMLDivElement>();
 
   const services = [
     {
       title: t("services.recruiting.title"),
       description: t("services.recruiting.description"),
-      href: "/services#recruiting",
     },
     {
       title: t("services.outsourcing.title"),
       description: t("services.outsourcing.description"),
-      href: "/services#outsourcing",
     },
     {
       title: t("services.payroll.title"),
       description: t("services.payroll.description"),
-      href: "/services#payroll",
-    },
-    {
-      title: t("services.logistics.title"),
-      description: t("services.logistics.description"),
-      href: "/services#logistics",
     },
   ];
 
@@ -51,36 +41,27 @@ export function ServicesPreview() {
           </div>
         </ScrollReveal>
 
-        {/* Services — clean bordered grid with staggered reveal */}
-        <div
-          ref={gridRef}
-          className="grid md:grid-cols-2 gap-px bg-border rounded-xl overflow-hidden border border-border"
-        >
-          {services.map((service, index) => (
-            <Link
-              key={service.title}
-              to={service.href}
-              className={cn(
-                "group bg-background p-8 md:p-10 transition-all duration-700 ease-out hover:bg-muted/40",
-                gridVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-6"
-              )}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-accent transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-                {service.description}
-              </p>
-              <span className="inline-flex items-center text-sm font-medium text-accent opacity-0 group-hover:opacity-100 transition-opacity">
-                Learn more
-                <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
-              </span>
-            </Link>
-          ))}
-        </div>
+        {/* Flip Cards Grid */}
+        <ScrollReveal variant="fade-up" delay={100}>
+          <div className="grid md:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <FlipCard
+                key={service.title}
+                className="h-64 md:h-72"
+                front={
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground text-center leading-tight">
+                    {service.title}
+                  </h3>
+                }
+                back={
+                  <p className="text-sm md:text-base text-primary-foreground/90 text-center leading-relaxed">
+                    {service.description}
+                  </p>
+                }
+              />
+            ))}
+          </div>
+        </ScrollReveal>
 
         {/* CTA */}
         <ScrollReveal variant="fade-up" delay={200}>

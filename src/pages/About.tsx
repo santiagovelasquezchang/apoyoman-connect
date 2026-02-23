@@ -2,17 +2,14 @@ import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
-  Target,
-  Eye,
   Shield,
   Users,
   Building2,
   CheckCircle,
   Zap,
   Globe,
-  Search,
-  FileCheck,
-  Truck,
+  Target,
+  Eye,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -22,13 +19,6 @@ import ctaBg from "@/assets/cta-bg.jpg";
 
 export default function About() {
   const { t } = useLanguage();
-
-  const services = [
-    { icon: Search, titleKey: "about.service1.title", descKey: "about.service1.desc" },
-    { icon: Users, titleKey: "about.service2.title", descKey: "about.service2.desc" },
-    { icon: FileCheck, titleKey: "about.service3.title", descKey: "about.service3.desc" },
-    { icon: Truck, titleKey: "about.service4.title", descKey: "about.service4.desc" },
-  ];
 
   const advantages = [
     { icon: Shield, titleKey: "about.adv1.title", descKey: "about.adv1.desc" },
@@ -67,7 +57,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* What is Apoyoman 2.0 */}
+      {/* What is Apoyoman */}
       <section className="section-padding bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -90,7 +80,7 @@ export default function About() {
                   { value: "20+", labelKey: "about.fact.years" },
                   { value: "300+", labelKey: "about.fact.workers" },
                   { value: "5+", labelKey: "about.fact.projects" },
-                ].map((fact, index) => (
+                ].map((fact) => (
                   <div key={fact.labelKey} className="bg-section-light rounded-xl p-4 text-center">
                     <div className="text-2xl font-bold text-accent">{fact.value}</div>
                     <div className="text-sm text-muted-foreground">{t(fact.labelKey)}</div>
@@ -124,105 +114,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="section-padding bg-section-light">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-            <ScrollReveal variant="scale-up">
-              <div className="bg-card rounded-2xl border border-border p-8 md:p-10 h-full">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-accent/10 mb-6">
-                  <Target className="h-6 w-6 text-accent" />
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                  {t("aboutPage.missionTitle")}
-                </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  {t("aboutPage.missionDescription")}
-                </p>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal variant="scale-up" delay={200}>
-              <div className="bg-card rounded-2xl border border-border p-8 md:p-10 h-full">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-accent/10 mb-6">
-                  <Eye className="h-6 w-6 text-accent" />
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                  {t("aboutPage.visionTitle")}
-                </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  {t("aboutPage.visionDescription")}
-                </p>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Services */}
-      <section className="section-padding bg-background">
-        <div className="container mx-auto px-4 md:px-6">
-          <ScrollReveal variant="fade-up">
-            <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-              <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-                {t("about.servicesBadge")}
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                {t("about.servicesTitle")}
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((svc, index) => (
-              <ScrollReveal key={svc.titleKey} variant="scale-up" delay={index * 100}>
-                <div className="text-center p-6 rounded-xl bg-card border border-border hover:border-accent/50 transition-colors h-full">
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent/10 mb-4">
-                    <svc.icon className="h-7 w-7 text-accent" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
-                    {t(svc.titleKey)}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">{t(svc.descKey)}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Competitive Advantages */}
-      <section className="section-padding bg-section-light">
-        <div className="container mx-auto px-4 md:px-6">
-          <ScrollReveal variant="fade-up">
-            <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-              <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-                {t("about.advBadge")}
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                {t("about.advTitle")}
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {advantages.map((adv, index) => (
-              <ScrollReveal key={adv.titleKey} variant="scale-up" delay={index * 100}>
-                <div className="p-6 rounded-xl bg-card border border-border h-full">
-                  <adv.icon className="h-8 w-8 text-accent mb-4" />
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
-                    {t(adv.titleKey)}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">{t(adv.descKey)}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Core Values */}
-      <section className="section-padding bg-background">
+      <section className="section-padding bg-section-light">
         <div className="container mx-auto px-4 md:px-6">
           <ScrollReveal variant="fade-up">
             <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
@@ -253,14 +146,33 @@ export default function About() {
         </div>
       </section>
 
-      {/* Tagline */}
-      <section className="py-16 bg-section-light">
-        <div className="container mx-auto px-4 md:px-6 text-center">
+      {/* Competitive Advantages */}
+      <section className="section-padding bg-background">
+        <div className="container mx-auto px-4 md:px-6">
           <ScrollReveal variant="fade-up">
-            <blockquote className="text-2xl md:text-3xl font-bold text-foreground italic max-w-3xl mx-auto">
-              "{t("about.tagline")}"
-            </blockquote>
+            <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+              <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
+                {t("about.advBadge")}
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                {t("about.advTitle")}
+              </h2>
+            </div>
           </ScrollReveal>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {advantages.map((adv, index) => (
+              <ScrollReveal key={adv.titleKey} variant="scale-up" delay={index * 100}>
+                <div className="p-6 rounded-xl bg-card border border-border h-full">
+                  <adv.icon className="h-8 w-8 text-accent mb-4" />
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                    {t(adv.titleKey)}
+                  </h3>
+                  <p className="text-muted-foreground text-sm">{t(adv.descKey)}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 

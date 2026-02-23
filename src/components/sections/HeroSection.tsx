@@ -14,14 +14,6 @@ export function HeroSection() {
     { value: t("hero.stat4.value"), label: t("hero.stat4.label") },
   ];
 
-  const capabilities = [
-    t("hero.cap1"),
-    t("hero.cap2"),
-    t("hero.cap3"),
-    t("hero.cap4"),
-    t("hero.cap5"),
-  ];
-
   return (
     <section className="relative min-h-screen flex items-center">
       <div className="absolute inset-0 z-0">
@@ -29,8 +21,8 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-primary/85" />
       </div>
       <div className="container mx-auto px-4 md:px-6 pt-28 pb-20 md:pt-36 md:pb-28 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-start">
-          {/* Left — Content */}
+        <div className="max-w-3xl">
+          {/* Content */}
           <div className="animate-fade-in">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-accent mb-5">
               {t("hero.eyebrow")}
@@ -64,26 +56,6 @@ export function HeroSection() {
               >
                 <Link to="/contact">{t("hero.contactUs")}</Link>
               </Button>
-            </div>
-          </div>
-
-          {/* Right — Capabilities panel */}
-          <div className="hidden lg:block animate-fade-in animation-delay-200">
-            <div className="border border-primary-foreground/15 rounded-xl p-8">
-              <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-6">
-                {t("hero.capTitle")}
-              </h2>
-              <ul className="space-y-4">
-                {capabilities.map((cap, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-3 text-primary-foreground/80 text-[15px] leading-snug"
-                  >
-                    <span className="block w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0" />
-                    {cap}
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>

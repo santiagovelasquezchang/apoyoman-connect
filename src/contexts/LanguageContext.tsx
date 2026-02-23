@@ -25,6 +25,7 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.title": "Execution Without",
     "hero.titleAccent": "Exposure",
     "hero.description": "We take the workforce risk off your balance sheet. Headhunting, outsourcing, payroll, and compliance — one contract, full coverage.",
+    "home.quote": "We don't bet on stability. We bet on the structural need to execute in uncertain environments.",
     "hero.exploreServices": "Explore Services",
     "hero.contactUs": "Contact Us",
     "hero.capTitle": "Core Capabilities",
@@ -45,7 +46,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Services Preview
     "services.badge": "Our Services",
     "services.title": "Workforce Solutions for Oil & Gas",
-    "services.description": "End-to-end workforce execution for energy projects in Venezuela — recruitment, outsourcing, payroll, and field logistics under one contract.",
+    "services.description": "Recruiting, outsourcing, and payroll solutions for energy projects in Venezuela — under one contract.",
     "services.viewAll": "View All Services",
     "services.recruiting.title": "Headhunting & Technical Recruiting",
     "services.recruiting.description": "Specialized recruitment and selection of qualified personnel across all organizational levels for oil, gas, and energy projects.",
@@ -53,8 +54,6 @@ const translations: Record<Language, Record<string, string>> = {
     "services.outsourcing.description": "Full workforce outsourcing with complete labor coverage and compliance — so operators can focus on production, not paperwork.",
     "services.payroll.title": "Payroll & Labor Compliance",
     "services.payroll.description": "Compliant payroll processing under Venezuelan labor law, including statutory benefits, social obligations, and regulatory reporting.",
-    "services.logistics.title": "Logistics & Site Services",
-    "services.logistics.description": "On-the-ground coordination for housing, transportation, per diems, and site logistics wherever the project operates.",
 
     // Why Choose Us
     "why.badge": "Why APOYOMAN",
@@ -79,7 +78,7 @@ const translations: Record<Language, Record<string, string>> = {
     "cta.call": "Or call us at",
 
     // Footer
-    "footer.description": "Specialized workforce solutions for the oil and gas industry — recruitment, outsourcing, payroll, and field logistics under one contract.",
+    "footer.description": "Specialized workforce solutions for the oil and gas industry — recruitment, outsourcing, payroll, and compliance under one contract.",
     "footer.quickLinks": "Quick Links",
     "footer.services": "Services",
     "footer.contact": "Contact Us",
@@ -87,13 +86,13 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.service1": "Headhunting & Recruiting",
     "footer.service2": "Staff Outsourcing",
     "footer.service3": "Payroll & Compliance",
-    "footer.service4": "Logistics & Site Services",
+    
 
     // Services Page
     "servicesPage.badge": "What We Offer",
     "servicesPage.title": "Workforce Solutions for",
     "servicesPage.titleAccent": "Oil & Gas Operations",
-    "servicesPage.description": "End-to-end workforce execution for energy projects in Venezuela — recruitment, outsourcing, payroll, and field logistics under one contract.",
+    "servicesPage.description": "We provide recruiting, staff outsourcing, and payroll & labor compliance services — focused exclusively on workforce delivery for oil & gas operations.",
     "servicesPage.consultation": "Request a Consultation",
     "servicesPage.features": "Key Features",
     "servicesPage.ctaTitle": "Need a Custom Solution?",
@@ -192,8 +191,8 @@ const translations: Record<Language, Record<string, string>> = {
 
     // About - What is Apoyoman
     "about.whatBadge": "Who We Are",
-    "about.whatTitle": "What is Apoyoman 2.0?",
-    "about.whatP1": "Apoyoman 2.0 is the strategic reactivation of Servicios Apoyoman C.A., a Venezuelan company with over 20 years of experience (1989–2010) in headhunting, staff outsourcing, and labor management for oil, energy, and infrastructure projects.",
+    "about.whatTitle": "What is Apoyoman?",
+    "about.whatP1": "Apoyoman is the strategic reactivation of Servicios Apoyoman C.A., a Venezuelan company with over 20 years of experience (1989–2010) in headhunting, staff outsourcing, and labor management for oil, energy, and infrastructure projects.",
     "about.whatP2": "We worked with PDVSA and multinational partnerships including ConocoPhillips and Chevron, managing from 30 to over 300 employees per project. Now, with a new geopolitical window opening in 2026, we are re-entering the market with proven expertise.",
     "about.fact.founded": "Year Founded",
     "about.fact.years": "Years of Experience",
@@ -211,8 +210,6 @@ const translations: Record<Language, Record<string, string>> = {
     "about.service2.desc": "Full workforce outsourcing with complete labor coverage and compliance — so operators can focus on production, not paperwork.",
     "about.service3.title": "Payroll & Labor Compliance",
     "about.service3.desc": "Compliant payroll processing under Venezuelan labor law, including statutory benefits, social obligations, and regulatory reporting.",
-    "about.service4.title": "Logistics & Site Services",
-    "about.service4.desc": "On-the-ground coordination for housing, transportation, per diems, and site logistics wherever the project operates.",
 
     // About - Competitive Advantages
     "about.advBadge": "Why Us",
@@ -300,7 +297,7 @@ const translations: Record<Language, Record<string, string>> = {
     "services.recruiting.dropdown": "Headhunting & Technical Recruiting",
     "services.outsourcing.dropdown": "Staff Outsourcing",
     "services.payroll.dropdown": "Payroll & Labor Compliance",
-    "services.logistics.dropdown": "Logistics & Site Services",
+    
   },
   es: {
     // Navigation
@@ -316,6 +313,7 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.title": "Ejecución Sin",
     "hero.titleAccent": "Exposición",
     "hero.description": "Sacamos el riesgo laboral de tu balance. Headhunting, outsourcing, nómina y cumplimiento — un solo contrato, cobertura total.",
+    "home.quote": "No apostamos a la estabilidad. Apostamos a la necesidad estructural de ejecutar en entornos inciertos.",
     "hero.exploreServices": "Explorar Servicios",
     "hero.contactUs": "Contáctanos",
     "hero.capTitle": "Capacidades Principales",
@@ -336,7 +334,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Services Preview
     "services.badge": "Nuestros Servicios",
     "services.title": "Soluciones de Fuerza Laboral para Petróleo y Gas",
-    "services.description": "Ejecución integral de fuerza laboral para proyectos energéticos en Venezuela — reclutamiento, outsourcing, nómina y logística de campo bajo un solo contrato.",
+    "services.description": "Reclutamiento, outsourcing y soluciones de nómina para proyectos energéticos en Venezuela — bajo un solo contrato.",
     "services.viewAll": "Ver Todos los Servicios",
     "services.recruiting.title": "Headhunting y Reclutamiento Técnico",
     "services.recruiting.description": "Reclutamiento y selección especializada de personal calificado en todos los niveles organizacionales para proyectos de petróleo, gas y energía.",
@@ -344,8 +342,6 @@ const translations: Record<Language, Record<string, string>> = {
     "services.outsourcing.description": "Outsourcing integral de fuerza laboral con cobertura y cumplimiento laboral completo — para que los operadores se concentren en producción, no en papeleo.",
     "services.payroll.title": "Nómina y Cumplimiento Laboral",
     "services.payroll.description": "Procesamiento de nómina conforme a la legislación laboral venezolana, incluyendo prestaciones sociales, obligaciones y reportes regulatorios.",
-    "services.logistics.title": "Logística y Site Services",
-    "services.logistics.description": "Coordinación en campo de vivienda, transporte, viáticos y logística operativa donde el proyecto lo requiera.",
 
     // Why Choose Us
     "why.badge": "Por Qué APOYOMAN",
@@ -370,7 +366,7 @@ const translations: Record<Language, Record<string, string>> = {
     "cta.call": "O llámanos al",
 
     // Footer
-    "footer.description": "Soluciones especializadas de fuerza laboral para la industria del petróleo y gas — reclutamiento, outsourcing, nómina y logística de campo bajo un solo contrato.",
+    "footer.description": "Soluciones especializadas de fuerza laboral para la industria del petróleo y gas — reclutamiento, outsourcing, nómina y cumplimiento bajo un solo contrato.",
     "footer.quickLinks": "Enlaces Rápidos",
     "footer.services": "Servicios",
     "footer.contact": "Contáctanos",
@@ -378,13 +374,13 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.service1": "Headhunting y Reclutamiento",
     "footer.service2": "Outsourcing de Personal",
     "footer.service3": "Nómina y Cumplimiento",
-    "footer.service4": "Logística y Site Services",
+    
 
     // Services Page
     "servicesPage.badge": "Lo Que Ofrecemos",
     "servicesPage.title": "Soluciones de Fuerza Laboral para",
     "servicesPage.titleAccent": "Operaciones de Petróleo y Gas",
-    "servicesPage.description": "Ejecución integral de fuerza laboral para proyectos energéticos en Venezuela — reclutamiento, outsourcing, nómina y logística de campo bajo un solo contrato.",
+    "servicesPage.description": "Ofrecemos reclutamiento, outsourcing de personal y nómina & cumplimiento laboral — enfocados exclusivamente en soluciones de fuerza laboral para operaciones de petróleo y gas.",
     "servicesPage.consultation": "Solicitar Consulta",
     "servicesPage.features": "Características Principales",
     "servicesPage.ctaTitle": "¿Necesitas una Solución Personalizada?",
@@ -483,8 +479,8 @@ const translations: Record<Language, Record<string, string>> = {
 
     // About - What is Apoyoman
     "about.whatBadge": "Quiénes Somos",
-    "about.whatTitle": "¿Qué es Apoyoman 2.0?",
-    "about.whatP1": "Apoyoman 2.0 es la reactivación estratégica de Servicios Apoyoman C.A., empresa venezolana con más de 20 años de experiencia (1989–2010) en headhunting, outsourcing de personal y gestión laboral para proyectos de petróleo, energía e infraestructura.",
+    "about.whatTitle": "¿Qué es Apoyoman?",
+    "about.whatP1": "Apoyoman es la reactivación estratégica de Servicios Apoyoman C.A., empresa venezolana con más de 20 años de experiencia (1989–2010) en headhunting, outsourcing de personal y gestión laboral para proyectos de petróleo, energía e infraestructura.",
     "about.whatP2": "Trabajamos con PDVSA y asociaciones con multinacionales como ConocoPhillips y Chevron, gestionando de 30 a más de 300 empleados por proyecto. Ahora, con una nueva ventana geopolítica en 2026, re-ingresamos al mercado con experiencia probada.",
     "about.fact.founded": "Año de Fundación",
     "about.fact.years": "Años de Experiencia",
@@ -502,8 +498,6 @@ const translations: Record<Language, Record<string, string>> = {
     "about.service2.desc": "Outsourcing integral de fuerza laboral con cobertura y cumplimiento laboral completo — para que los operadores se concentren en producción, no en papeleo.",
     "about.service3.title": "Nómina y Cumplimiento Laboral",
     "about.service3.desc": "Procesamiento de nómina conforme a la legislación laboral venezolana, incluyendo prestaciones sociales, obligaciones y reportes regulatorios.",
-    "about.service4.title": "Logística y Site Services",
-    "about.service4.desc": "Coordinación en campo de vivienda, transporte, viáticos y logística operativa donde el proyecto lo requiera.",
 
     // About - Competitive Advantages
     "about.advBadge": "Por Qué Nosotros",
@@ -591,7 +585,7 @@ const translations: Record<Language, Record<string, string>> = {
     "services.recruiting.dropdown": "Headhunting y Reclutamiento Técnico",
     "services.outsourcing.dropdown": "Outsourcing de Personal",
     "services.payroll.dropdown": "Nómina y Cumplimiento Laboral",
-    "services.logistics.dropdown": "Logística y Site Services",
+    
   },
 };
 

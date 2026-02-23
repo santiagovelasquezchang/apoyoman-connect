@@ -4,7 +4,6 @@ import {
   Search,
   Users,
   FileCheck,
-  Truck,
   ArrowRight,
   CheckCircle,
   ClipboardList,
@@ -24,7 +23,6 @@ export default function Services() {
       id: "recruiting",
       icon: Search,
       title: t("services.recruiting.title"),
-      subtitle: t("servicesPage.features"),
       description: "Specialized recruitment and selection of qualified personnel across all organizational levels — from field operators and skilled technicians to engineers, supervisors, and administrative staff — for oil, gas, and energy projects.",
       features: [
         "Technical and operational talent sourcing",
@@ -39,7 +37,6 @@ export default function Services() {
       id: "outsourcing",
       icon: Users,
       title: t("services.outsourcing.title"),
-      subtitle: t("servicesPage.features"),
       description: "Full workforce outsourcing with complete labor coverage and compliance. We supply and manage operational, technical, and administrative personnel so operators can focus on production — not paperwork.",
       features: [
         "Supply of field, technical, and administrative workers",
@@ -54,7 +51,6 @@ export default function Services() {
       id: "payroll",
       icon: FileCheck,
       title: t("services.payroll.title"),
-      subtitle: t("servicesPage.features"),
       description: "Compliant payroll processing under Venezuelan labor law, including statutory benefits, social obligations, and regulatory reporting — built for the complexity of oil & gas compensation structures.",
       features: [
         "Payroll processing under Venezuelan labor regulations",
@@ -63,21 +59,6 @@ export default function Services() {
         "Salary structures for field allowances and per diems",
         "Workers' compensation and occupational safety compliance",
         "Regulatory reporting and labor authority liaison",
-      ],
-    },
-    {
-      id: "logistics",
-      icon: Truck,
-      title: t("services.logistics.title"),
-      subtitle: t("servicesPage.features"),
-      description: "On-the-ground coordination for housing, transportation, per diems, and site logistics — ensuring your workforce is supported wherever the project operates.",
-      features: [
-        "Worker housing and accommodation coordination",
-        "Per diem and field allowance management",
-        "Transportation and site mobilization logistics",
-        "Multi-region operational support (Zulia, Falcon, Carabobo, Anzoategui, Monagas)",
-        "Contractor and vendor coordination",
-        "24/7 operational support for field teams",
       ],
     },
   ];
@@ -130,9 +111,6 @@ export default function Services() {
                     <div className="p-3 rounded-lg bg-accent/10">
                       <service.icon className="h-6 w-6 text-accent" />
                     </div>
-                    <span className="text-sm font-semibold text-accent uppercase tracking-wider">
-                      {service.subtitle}
-                    </span>
                   </div>
 
                   <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
