@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, Linkedin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import logo from "@/assets/logo.png";
 
@@ -9,8 +9,10 @@ export function Footer() {
 
   const footerLinks = {
     company: [
+      { name: t("nav.home"), href: "/" },
+      { name: t("nav.services"), href: "/services" },
+      { name: t("nav.experience"), href: "/experience" },
       { name: t("nav.about"), href: "/about" },
-      { name: t("aboutPage.teamBadge"), href: "/about#team" },
       { name: t("nav.contact"), href: "/contact" },
     ],
     services: [
@@ -23,7 +25,6 @@ export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 md:px-6">
-        {/* Main Footer */}
         <div className="py-12 md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
@@ -43,19 +44,10 @@ export function Footer() {
               >
                 <Linkedin size={18} />
               </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-accent-foreground transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter size={18} />
-              </a>
             </div>
           </div>
 
-          {/* Company Links */}
+          {/* Navigation Links */}
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider mb-4">
               {t("footer.quickLinks")}
@@ -99,13 +91,6 @@ export function Footer() {
               {t("footer.contact")}
             </h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin size={18} className="mt-0.5 text-accent flex-shrink-0" />
-                <span className="text-sm text-primary-foreground/70">
-                  123 Business District<br />
-                  Houston, TX 77001
-                </span>
-              </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-accent flex-shrink-0" />
                 <a
@@ -130,25 +115,9 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="py-6 border-t border-primary-foreground/10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-primary-foreground/60">
-              © {currentYear} APOYOMAN. {t("footer.rights")}
-            </p>
-            <div className="flex gap-6">
-              <Link
-                to="/privacy"
-                className="text-sm text-primary-foreground/60 hover:text-accent transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                to="/terms"
-                className="text-sm text-primary-foreground/60 hover:text-accent transition-colors"
-              >
-                Terms of Service
-              </Link>
-            </div>
-          </div>
+          <p className="text-sm text-primary-foreground/60 text-center">
+            © {currentYear} APOYOMAN. {t("footer.rights")}
+          </p>
         </div>
       </div>
     </footer>

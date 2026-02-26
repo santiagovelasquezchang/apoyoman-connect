@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, Users, Building2, Calendar, MapPin, Briefcase } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
@@ -9,50 +9,14 @@ import { useCounterAnimation } from "@/hooks/use-counter-animation";
 import experienceBg from "@/assets/experience-bg.jpg";
 import ctaBg from "@/assets/cta-bg.jpg";
 
-const caseStudyKeys = [
-  {
-    key: "petrozuata",
-    icon: Building2,
-    workers: "~300",
-    period: "1996–2007",
-    partners: "PDVSA + ConocoPhillips",
-  },
-  {
-    key: "ameriven",
-    icon: Users,
-    workers: "~350",
-    period: "2000s",
-    partners: "ChevronTexaco + ConocoPhillips + PDVSA",
-  },
-  {
-    key: "sincor",
-    icon: Briefcase,
-    workers: "~320",
-    period: "2000s",
-    partners: "TotalEnergies + Statoil (Equinor) + PDVSA",
-  },
-  {
-    key: "maraven",
-    icon: MapPin,
-    workers: "Various",
-    period: "1989–2010",
-    partners: "Maraven, Corpoven, Lagoven, CIED",
-  },
-  {
-    key: "otac",
-    icon: Calendar,
-    workers: "~200",
-    period: "1992–1996",
-    partners: "Government of Venezuela",
-  },
-];
+const caseStudyKeys = ["petrozuata", "ameriven", "sincor", "maraven", "otac"];
 
 const trackRecord = [
   { project: "Petrozuata", partners: "PDVSA + ConocoPhillips", workers: "~300", period: "1996–2007" },
-  { project: "Ameriven", partners: "PDVSA + ChevronTexaco + ConocoPhillips", workers: "~350", period: "2000s" },
-  { project: "Sincor", partners: "PDVSA + TotalEnergies + Statoil", workers: "~320", period: "2000s" },
-  { project: "PDVSA Affiliates", partners: "Maraven, Corpoven, Lagoven, CIED", workers: "Various", period: "1989–2010" },
-  { project: "OTAC", partners: "Government of Venezuela", workers: "~200", period: "1992–1996" },
+  { project: "Ameriven", partners: "PDVSA + ChevronTexaco + ConocoPhillips", workers: "~350", periodKey: "exp.period.2000s" },
+  { project: "Sincor", partners: "PDVSA + TotalEnergies + Statoil", workers: "~320", periodKey: "exp.period.2000s" },
+  { project: "exp.maraven.name", partners: "Maraven, Corpoven, Lagoven, CIED", workers: "—", period: "1989–2010" },
+  { project: "OTAC", partners: "exp.otac.partners", workers: "~200", period: "1992–1996" },
 ];
 
 function StatsBar() {
@@ -61,7 +25,7 @@ function StatsBar() {
 
   const yearsValue = useCounterAnimation({ end: 20, suffix: "+", isVisible });
   const projectsValue = useCounterAnimation({ end: 5, isVisible });
-  const workersValue = useCounterAnimation({ end: 1370, suffix: "+", isVisible });
+  const workersValue = useCounterAnimation({ end: 1000, suffix: "+", isVisible });
   const foundedValue = useCounterAnimation({ end: 1989, isVisible, duration: 2000 });
 
   const stats = [
@@ -89,6 +53,78 @@ function StatsBar() {
   );
 }
 
+function CaseStudyCard({ studyKey }: { studyKey: string }) {
+  const { t } = useLanguage();
+
+  // Role text is stored as a single string with bullet items separated by newlines
+  const roleText = t(`exp.${studyKey}.role`);
+  const roleItems = roleText.split("\n").filter(Boolean);
+
+  return (
+    <ScrollReveal variant="fade-up">
+      <div className="bg-card rounded-2xl border border-border overflow-hidden">
+        {/* Header */}
+        <div className="p-6 md:p-8 border-b border-border">
+          <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+            {t(`exp.${studyKey}.name`)}
+          </h3>
+          <p className="text-lg text-accent font-medium italic">
+            {t(`exp.${studyKey}.subtitle`)}
+          </p>
+        </div>
+
+        {/* Two-column content */}
+        <div className="grid md:grid-cols-2">
+          {/* Left column — Context + Challenge */}
+          <div className="p-6 md:p-8 border-r-0 md:border-r border-border space-y-6" style={{ borderLeftWidth: '3px', borderLeftColor: 'hsl(var(--accent))' }}>
+            <div>
+              <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
+                {t("exp.label.context")}
+              </h4>
+              <p className="text-muted-foreground leading-relaxed">
+                {t(`exp.${studyKey}.context`)}
+              </p>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
+                {t("exp.label.challenge")}
+              </h4>
+              <p className="text-muted-foreground leading-relaxed">
+                {t(`exp.${studyKey}.challenge`)}
+              </p>
+            </div>
+          </div>
+
+          {/* Right column — Role + Outcome */}
+          <div className="p-6 md:p-8 space-y-6" style={{ borderRightWidth: '3px', borderRightColor: 'hsl(var(--primary))' }}>
+            <div>
+              <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
+                {t("exp.label.role")}
+              </h4>
+              <ul className="space-y-2">
+                {roleItems.map((item, i) => (
+                  <li key={i} className="text-muted-foreground leading-relaxed flex items-start gap-2">
+                    <span className="text-accent mt-1.5 flex-shrink-0">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
+                {t("exp.label.outcome")}
+              </h4>
+              <p className="text-muted-foreground leading-relaxed">
+                {t(`exp.${studyKey}.outcome`)}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ScrollReveal>
+  );
+}
+
 export default function Experience() {
   const { t } = useLanguage();
 
@@ -101,9 +137,6 @@ export default function Experience() {
           <div className="absolute inset-0 bg-primary/80" />
         </div>
         <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
-          <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-            {t("experiencePage.badge")}
-          </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
             {t("experiencePage.title")}{" "}
             <span className="text-accent">{t("experiencePage.titleAccent")}</span>
@@ -114,7 +147,6 @@ export default function Experience() {
         </div>
       </section>
 
-      {/* Stats Bar */}
       <StatsBar />
 
       {/* Case Studies */}
@@ -122,91 +154,15 @@ export default function Experience() {
         <div className="container mx-auto px-4 md:px-6">
           <ScrollReveal variant="fade-up">
             <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-              <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-                {t("exp.caseStudies.badge")}
-              </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 {t("exp.caseStudies.title")}
               </h2>
-              <p className="text-lg text-muted-foreground">
-                {t("exp.caseStudies.subtitle")}
-              </p>
             </div>
           </ScrollReveal>
 
-          <div className="space-y-8 lg:space-y-12">
-            {caseStudyKeys.map((cs, index) => (
-              <ScrollReveal key={cs.key} variant="fade-up" delay={Math.min(index * 150, 600)}>
-                <div className="bg-card rounded-2xl border border-border overflow-hidden">
-                  <div className="p-6 md:p-10">
-                    {/* Header */}
-                    <div className="flex flex-col md:flex-row md:items-center gap-4 mb-6">
-                      <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                          <cs.icon className="w-6 h-6 text-accent" />
-                        </div>
-                        <div>
-                          <h3 className="text-2xl font-bold text-foreground">
-                            {t(`exp.${cs.key}.name`)}
-                          </h3>
-                          <p className="text-sm text-muted-foreground">{cs.partners}</p>
-                        </div>
-                      </div>
-                      <div className="flex gap-4 md:ml-auto">
-                        <span className="inline-flex items-center gap-1.5 text-sm font-medium text-accent bg-accent/10 px-3 py-1 rounded-full">
-                          <Users className="w-3.5 h-3.5" />
-                          {cs.workers}
-                        </span>
-                        <span className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground bg-muted px-3 py-1 rounded-full">
-                          <Calendar className="w-3.5 h-3.5" />
-                          {cs.period}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Subtitle */}
-                    <p className="text-lg font-medium text-foreground/80 mb-6 italic">
-                      {t(`exp.${cs.key}.subtitle`)}
-                    </p>
-
-                    {/* Content Grid */}
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
-                          {t("exp.label.context")}
-                        </h4>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {t(`exp.${cs.key}.context`)}
-                        </p>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
-                          {t("exp.label.role")}
-                        </h4>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {t(`exp.${cs.key}.role`)}
-                        </p>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
-                          {t("exp.label.challenge")}
-                        </h4>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {t(`exp.${cs.key}.challenge`)}
-                        </p>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
-                          {t("exp.label.outcome")}
-                        </h4>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {t(`exp.${cs.key}.outcome`)}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
+          <div className="space-y-10 lg:space-y-14">
+            {caseStudyKeys.map((key) => (
+              <CaseStudyCard key={key} studyKey={key} />
             ))}
           </div>
         </div>
@@ -217,9 +173,6 @@ export default function Experience() {
         <div className="container mx-auto px-4 md:px-6">
           <ScrollReveal variant="fade-up">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-                {t("exp.summary.badge")}
-              </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 {t("exp.summary.title")}
               </h2>
@@ -246,14 +199,19 @@ export default function Experience() {
                   </tr>
                 </thead>
                 <tbody>
-                  {trackRecord.map((row) => (
-                    <tr key={row.project} className="border-b border-border hover:bg-section-light transition-colors">
-                      <td className="py-4 px-4 font-semibold text-foreground">{row.project}</td>
-                      <td className="py-4 px-4 text-muted-foreground">{row.partners}</td>
-                      <td className="py-4 px-4 text-accent font-semibold">{row.workers}</td>
-                      <td className="py-4 px-4 text-muted-foreground">{row.period}</td>
-                    </tr>
-                  ))}
+                  {trackRecord.map((row) => {
+                    const projectName = row.project.startsWith("exp.") ? t(row.project) : row.project;
+                    const partners = row.partners.startsWith("exp.") ? t(row.partners) : row.partners;
+                    const period = row.periodKey ? t(row.periodKey) : row.period;
+                    return (
+                      <tr key={projectName} className="border-b border-border hover:bg-section-light transition-colors">
+                        <td className="py-4 px-4 font-semibold text-foreground">{projectName}</td>
+                        <td className="py-4 px-4 text-muted-foreground">{partners}</td>
+                        <td className="py-4 px-4 text-accent font-semibold">{row.workers}</td>
+                        <td className="py-4 px-4 text-muted-foreground">{period}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>

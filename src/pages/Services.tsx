@@ -22,43 +22,34 @@ export default function Services() {
     {
       id: "recruiting",
       icon: Search,
-      title: t("services.recruiting.title"),
-      description: "Specialized recruitment and selection of qualified personnel across all organizational levels — from field operators and skilled technicians to engineers, supervisors, and administrative staff — for oil, gas, and energy projects.",
+      title: t("svc.recruiting.title"),
+      description: t("svc.recruiting.desc"),
       features: [
-        "Technical and operational talent sourcing",
-        "Multi-level recruitment (field, supervisory, administrative)",
-        "Candidate screening and selection",
-        "Rapid mobilization for project ramp-ups",
-        "Recruitment across multiple Venezuelan regions",
-        "Expatriate personnel support and coordination",
-      ],
-    },
-    {
-      id: "outsourcing",
-      icon: Users,
-      title: t("services.outsourcing.title"),
-      description: "Full workforce outsourcing with complete labor coverage and compliance. We supply and manage operational, technical, and administrative personnel so operators can focus on production — not paperwork.",
-      features: [
-        "Supply of field, technical, and administrative workers",
-        "Full Venezuelan labor law compliance (LOTTT)",
-        "Management of social obligations and statutory benefits",
-        "Workforce scaling — ramp up or down by project phase",
-        "Multi-site deployment across Venezuelan oil regions",
-        "Single-vendor model — one contract, zero fragmentation",
+        t("svc.recruiting.f1"),
+        t("svc.recruiting.f2"),
+        t("svc.recruiting.f3"),
       ],
     },
     {
       id: "payroll",
       icon: FileCheck,
-      title: t("services.payroll.title"),
-      description: "Compliant payroll processing under Venezuelan labor law, including statutory benefits, social obligations, and regulatory reporting — built for the complexity of oil & gas compensation structures.",
+      title: t("svc.payroll.title"),
+      description: t("svc.payroll.desc"),
       features: [
-        "Payroll processing under Venezuelan labor regulations",
-        "Statutory benefits administration (prestaciones sociales, utilidades, vacaciones)",
-        "Social security and insurance compliance (IVSS, INCES, FAOV)",
-        "Salary structures for field allowances and per diems",
-        "Workers' compensation and occupational safety compliance",
-        "Regulatory reporting and labor authority liaison",
+        t("svc.payroll.f1"),
+        t("svc.payroll.f2"),
+        t("svc.payroll.f3"),
+      ],
+    },
+    {
+      id: "outsourcing",
+      icon: Users,
+      title: t("svc.outsourcing.title"),
+      description: t("svc.outsourcing.desc"),
+      features: [
+        t("svc.outsourcing.f1"),
+        t("svc.outsourcing.f2"),
+        t("svc.outsourcing.f3"),
       ],
     },
   ];
@@ -72,9 +63,6 @@ export default function Services() {
           <div className="absolute inset-0 bg-primary/80" />
         </div>
         <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
-          <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-            {t("servicesPage.badge")}
-          </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
             {t("servicesPage.title")}{" "}
             <span className="text-accent">{t("servicesPage.titleAccent")}</span>
@@ -140,7 +128,7 @@ export default function Services() {
                 >
                   <div className="bg-card rounded-2xl border border-border p-6 md:p-8">
                     <h3 className="text-lg font-semibold text-foreground mb-6">
-                      {t("servicesPage.features")}:
+                      {t("servicesPage.features")}
                     </h3>
                     <ul className="space-y-4">
                       {service.features.map((feature) => (
@@ -162,7 +150,6 @@ export default function Services() {
       <section className="section-padding bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            {/* Left Column - Info */}
             <ScrollReveal variant="slide-left">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent mb-4">
                 <ClipboardList size={16} />
@@ -176,25 +163,8 @@ export default function Services() {
               <p className="text-lg text-muted-foreground mb-8">
                 {t("serviceForm.description")}
               </p>
-
-              {/* Trust indicators */}
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-accent" />
-                  <span className="text-muted-foreground">Free consultation with no obligations</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-accent" />
-                  <span className="text-muted-foreground">Response within 24 business hours</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-accent" />
-                  <span className="text-muted-foreground">Customized solutions for your needs</span>
-                </div>
-              </div>
             </ScrollReveal>
 
-            {/* Right Column - Form */}
             <ScrollReveal variant="slide-right" delay={200}>
               <div className="bg-card rounded-3xl border border-border p-6 md:p-8 soft-shadow">
                 <ServiceInquiryForm sourcePage="services" />
