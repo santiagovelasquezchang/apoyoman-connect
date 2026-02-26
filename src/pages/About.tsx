@@ -44,9 +44,6 @@ export default function About() {
           <div className="absolute inset-0 bg-primary/80" />
         </div>
         <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
-          <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-            {t("aboutPage.badge")}
-          </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
             {t("aboutPage.title")}{" "}
             <span className="text-accent">{t("aboutPage.titleAccent")}</span>
@@ -62,9 +59,6 @@ export default function About() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <ScrollReveal variant="slide-left">
-              <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-                {t("about.whatBadge")}
-              </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 {t("about.whatTitle")}
               </h2>
@@ -78,8 +72,8 @@ export default function About() {
                 {[
                   { value: "1989", labelKey: "about.fact.founded" },
                   { value: "20+", labelKey: "about.fact.years" },
-                  { value: "300+", labelKey: "about.fact.workers" },
-                  { value: "5+", labelKey: "about.fact.projects" },
+                  { value: "1,000+", labelKey: "about.fact.workers" },
+                  { value: "5", labelKey: "about.fact.projects" },
                 ].map((fact) => (
                   <div key={fact.labelKey} className="bg-section-light rounded-xl p-4 text-center">
                     <div className="text-2xl font-bold text-accent">{fact.value}</div>
@@ -89,7 +83,6 @@ export default function About() {
               </div>
             </ScrollReveal>
 
-            {/* Visual Element */}
             <ScrollReveal variant="slide-right" delay={200}>
               <div className="relative">
                 <div className="aspect-[4/3] rounded-xl overflow-hidden relative">
@@ -119,9 +112,6 @@ export default function About() {
         <div className="container mx-auto px-4 md:px-6">
           <ScrollReveal variant="fade-up">
             <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-              <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-                {t("aboutPage.valuesBadge")}
-              </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 {t("aboutPage.valuesTitle")}
               </h2>
@@ -151,9 +141,6 @@ export default function About() {
         <div className="container mx-auto px-4 md:px-6">
           <ScrollReveal variant="fade-up">
             <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-              <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
-                {t("about.advBadge")}
-              </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 {t("about.advTitle")}
               </h2>
