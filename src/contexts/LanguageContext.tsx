@@ -30,6 +30,23 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.stat3.label": "Workers Managed at Peak",
     "hero.stat4.label": "Major Projects with PDVSA Joint Ventures",
 
+    // Home - Flip Cards
+    "flip.recruiting.title": "Recruiting & Headhunting",
+    "flip.recruiting.desc": "We find the right people for your project — engineers, operators, supervisors — and get them on-site fast.",
+    "flip.outsourcing.title": "Staff Outsourcing",
+    "flip.outsourcing.desc": "We hire, manage, and run your workforce so you can focus on operations. One contract, zero headaches.",
+    "flip.payroll.title": "Payroll & Compliance",
+    "flip.payroll.desc": "We handle salaries, benefits, and all legal obligations under Venezuelan labor law. You stay compliant, always.",
+
+    // Home - Services Section
+    "services.badge": "What We Do",
+    "services.title": "Three Services. One Operator.",
+    "services.description": "Everything your project needs to staff up, stay compliant, and execute — under one contract.",
+    "services.viewAll": "View All Services",
+
+    // Home - Quote
+    "home.quote": "We don't bet on stability. We bet on the structural need to execute in uncertain environments.",
+
     // Services Page
     "servicesPage.title": "Workforce Solutions for",
     "servicesPage.titleAccent": "Oil & Gas Operations",
@@ -258,6 +275,23 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.stat2.label": "Años en el Sector Energético de Venezuela",
     "hero.stat3.label": "Trabajadores Gestionados en Pico",
     "hero.stat4.label": "Proyectos con Asociaciones PDVSA",
+
+    // Home - Flip Cards
+    "flip.recruiting.title": "Reclutamiento & Headhunting",
+    "flip.recruiting.desc": "Encontramos el personal indicado para tu proyecto — ingenieros, operadores, supervisores — y los ponemos en campo rápido.",
+    "flip.outsourcing.title": "Outsourcing de Personal",
+    "flip.outsourcing.desc": "Contratamos, gestionamos y administramos tu fuerza laboral para que te enfoques en operar. Un contrato, cero complicaciones.",
+    "flip.payroll.title": "Nómina & Cumplimiento",
+    "flip.payroll.desc": "Manejamos salarios, beneficios y todas las obligaciones legales bajo la ley laboral venezolana. Siempre en cumplimiento.",
+
+    // Home - Services Section
+    "services.badge": "Lo Que Hacemos",
+    "services.title": "Tres Servicios. Un Solo Operador.",
+    "services.description": "Todo lo que tu proyecto necesita para reclutar, cumplir y ejecutar — bajo un solo contrato.",
+    "services.viewAll": "Ver Todos los Servicios",
+
+    // Home - Quote
+    "home.quote": "No apostamos por la estabilidad. Apostamos por la necesidad estructural de ejecutar en entornos inciertos.",
 
     // Services Page
     "servicesPage.title": "Soluciones de Fuerza Laboral para",

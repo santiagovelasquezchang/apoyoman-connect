@@ -10,16 +10,16 @@ export function ServicesPreview() {
 
   const services = [
     {
-      title: t("services.recruiting.title"),
-      description: t("services.recruiting.description"),
+      title: t("flip.recruiting.title"),
+      description: t("flip.recruiting.desc"),
     },
     {
-      title: t("services.outsourcing.title"),
-      description: t("services.outsourcing.description"),
+      title: t("flip.outsourcing.title"),
+      description: t("flip.outsourcing.desc"),
     },
     {
-      title: t("services.payroll.title"),
-      description: t("services.payroll.description"),
+      title: t("flip.payroll.title"),
+      description: t("flip.payroll.desc"),
     },
   ];
 
