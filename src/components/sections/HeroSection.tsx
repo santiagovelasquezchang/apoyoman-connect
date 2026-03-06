@@ -46,42 +46,40 @@ export function HeroSection() {
 
   return (
     <>
-      <section className="relative min-h-screen flex items-center">
+      <section className="relative min-h-screen flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <img src={heroBg} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-primary/85" />
+          <div className="absolute inset-0 bg-primary/90" />
         </div>
-        <div className="container mx-auto px-4 md:px-6 pt-28 pb-20 md:pt-36 md:pb-28 relative z-10">
-          <div className="max-w-3xl">
-            <div className="animate-fade-in">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.05] mb-4">
-                APOYO<span className="text-accent">MAN</span>
-              </h1>
+        <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+          <div className="animate-fade-in max-w-4xl mx-auto">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-primary-foreground leading-[0.95] mb-6 tracking-tight">
+              APOYO<span className="text-accent">MAN</span>
+            </h1>
 
-              <p className="text-2xl md:text-3xl font-semibold text-primary-foreground/90 mb-8">
-                {t("hero.tagline")}
+            <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-primary-foreground/90 mb-10 tracking-wide uppercase">
+              {t("hero.tagline")}
+            </p>
+
+            <div className="space-y-1 mb-14 max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-primary-foreground/60">
+                {t("hero.line1")}
               </p>
-
-              <div className="space-y-1 mb-12">
-                <p className="text-lg text-primary-foreground/70">
-                  {t("hero.line1")}
-                </p>
-                <p className="text-lg text-primary-foreground/70">
-                  {t("hero.line2")}
-                </p>
-              </div>
-
-              <Button
-                asChild
-                size="lg"
-                className="bg-accent text-accent-foreground hover:bg-accent/90 text-sm font-semibold rounded-lg px-8 h-12 transition-colors"
-              >
-                <Link to="/experience">
-                  {t("hero.cta")}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+              <p className="text-base md:text-lg text-primary-foreground/60">
+                {t("hero.line2")}
+              </p>
             </div>
+
+            <Button
+              asChild
+              size="lg"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 text-sm font-semibold rounded-lg px-10 h-13 transition-colors"
+            >
+              <Link to="/experience">
+                {t("hero.cta")}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
