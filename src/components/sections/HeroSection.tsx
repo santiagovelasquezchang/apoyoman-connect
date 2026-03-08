@@ -24,14 +24,18 @@ function StatsBar() {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-background border-b border-border">
-      <div ref={ref} className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <section className="py-16 md:py-20 bg-background">
+      <div ref={ref} className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
           {stats.map((stat, index) => (
             <ScrollReveal key={stat.label} variant="fade-up" delay={index * 100}>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-accent mb-2">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-accent mb-3 tracking-tight">
+                  {stat.value}
+                </div>
+                <div className="text-xs md:text-sm font-medium uppercase tracking-[0.15em] text-muted-foreground leading-relaxed">
+                  {stat.label}
+                </div>
               </div>
             </ScrollReveal>
           ))}
@@ -51,35 +55,56 @@ export function HeroSection() {
           <img src={heroBg} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-primary/90" />
         </div>
-        <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
-          <div className="animate-fade-in max-w-4xl mx-auto">
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-primary-foreground leading-[0.95] mb-6 tracking-tight">
+
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+          <div className="animate-fade-in max-w-5xl mx-auto text-center">
+            {/* Brand Name */}
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-primary-foreground leading-[0.9] mb-8 tracking-tight">
               APOYO<span className="text-accent">MAN</span>
             </h1>
 
-            <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-primary-foreground/90 mb-10 tracking-wide uppercase">
+            {/* Tagline */}
+            <p className="text-lg md:text-xl lg:text-2xl font-semibold text-primary-foreground/90 mb-6 tracking-wide uppercase leading-snug max-w-3xl mx-auto">
               {t("hero.tagline")}
             </p>
 
-            <div className="space-y-1 mb-14 max-w-2xl mx-auto">
-              <p className="text-base md:text-lg text-primary-foreground/60">
+            {/* Separator */}
+            <div className="w-16 h-[2px] bg-accent mx-auto mb-8" />
+
+            {/* Subtext */}
+            <div className="space-y-1 mb-12 max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-primary-foreground/60 leading-relaxed">
                 {t("hero.line1")}
               </p>
-              <p className="text-base md:text-lg text-primary-foreground/60">
+              <p className="text-base md:text-lg text-primary-foreground/60 leading-relaxed">
                 {t("hero.line2")}
               </p>
             </div>
 
-            <Button
-              asChild
-              size="lg"
-              className="bg-accent text-accent-foreground hover:bg-accent/90 text-sm font-semibold rounded-lg px-10 h-13 transition-colors"
-            >
-              <Link to="/experience">
-                {t("hero.cta")}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button
+                asChild
+                size="lg"
+                className="bg-accent text-accent-foreground hover:bg-accent/90 text-sm font-semibold rounded-sm px-10 h-12 tracking-wide uppercase transition-colors"
+              >
+                <Link to="/experience">
+                  {t("hero.cta")}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/50 text-sm font-semibold rounded-sm px-10 h-12 tracking-wide uppercase transition-colors"
+              >
+                <Link to="/services">
+                  {t("hero.cta2")}
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
