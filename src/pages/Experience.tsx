@@ -24,13 +24,11 @@ function StatsBar() {
   const { ref, isVisible } = useScrollAnimation<HTMLDivElement>();
 
   const yearsValue = useCounterAnimation({ end: 20, suffix: "+", isVisible });
-  const projectsValue = useCounterAnimation({ end: 5, isVisible });
   const workersValue = useCounterAnimation({ end: 1000, suffix: "+", isVisible });
   const foundedValue = useCounterAnimation({ end: 1989, isVisible, duration: 2000 });
 
   const stats = [
     { value: yearsValue, labelKey: "exp.stat.years" },
-    { value: projectsValue, labelKey: "exp.stat.majorProjects" },
     { value: workersValue, labelKey: "exp.stat.workers" },
     { value: foundedValue, labelKey: "exp.stat.founded" },
   ];
@@ -38,7 +36,7 @@ function StatsBar() {
   return (
     <section className="py-12 md:py-16 bg-background border-b border-border">
       <div ref={ref} className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-3 gap-8">
           {stats.map((stat, index) => (
             <ScrollReveal key={stat.labelKey} variant="fade-up" delay={index * 100}>
               <div className="text-center">
