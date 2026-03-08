@@ -21,7 +21,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.getStarted": "Get Started",
 
     // Hero Section
-    "hero.tagline": "Operational Execution for Energy Projects\nin Complex Environments",
+    "hero.tagline": "Workforce Solutions for Oil & Gas Operations",
     "hero.line1": "Technical recruitment, labor management, and workforce administration",
     "hero.line2": "for oil, energy, and infrastructure projects in Venezuela.",
     "hero.cta": "View Project Experience",
@@ -268,7 +268,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.getStarted": "Comenzar",
 
     // Hero Section
-    "hero.tagline": "Ejecución Operativa para Proyectos Energéticos\nen Entornos Complejos",
+    "hero.tagline": "Soluciones de Fuerza Laboral para Operaciones de Petróleo y Gas",
     "hero.line1": "Reclutamiento técnico, gestión laboral y administración de workforce",
     "hero.line2": "para proyectos de petróleo, energía e infraestructura en Venezuela.",
     "hero.cta": "Ver Experiencia de Proyectos",
