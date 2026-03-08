@@ -61,6 +61,7 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
 
           {/* Contact Info */}
           <div>
