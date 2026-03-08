@@ -46,7 +46,7 @@ const translations: Record<Language, Record<string, string>> = {
     "services.viewAll": "View All Services",
 
     // Home - Quote
-    "home.quote": "We don't bet on stability. We bet on the structural need to execute in uncertain environments.",
+    "home.quote": "We take the operational risk off your balance sheet.",
 
     // Services Page
     "servicesPage.title": "Workforce Solutions for",
@@ -293,7 +293,7 @@ const translations: Record<Language, Record<string, string>> = {
     "services.viewAll": "Ver Todos los Servicios",
 
     // Home - Quote
-    "home.quote": "No apostamos por la estabilidad. Apostamos por la necesidad estructural de ejecutar en entornos inciertos.",
+    "home.quote": "Sacamos el riesgo operacional de tu balance.",
 
     // Services Page
     "servicesPage.title": "Soluciones de Fuerza Laboral para",
