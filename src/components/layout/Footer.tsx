@@ -70,21 +70,12 @@ export function Footer() {
             </h4>
             <ul className="space-y-4">
               <li className="flex items-center gap-3">
-                <Phone size={18} className="text-accent flex-shrink-0" />
-                <a
-                  href="tel:+1234567890"
-                  className="text-sm text-primary-foreground/70 hover:text-accent transition-colors"
-                >
-                  +1 (234) 567-890
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
                 <Mail size={18} className="text-accent flex-shrink-0" />
                 <a
-                  href="mailto:contact@apoyoman.com"
+                  href="mailto:info@apoyoman.com"
                   className="text-sm text-primary-foreground/70 hover:text-accent transition-colors"
                 >
-                  contact@apoyoman.com
+                  info@apoyoman.com
                 </a>
               </li>
             </ul>
