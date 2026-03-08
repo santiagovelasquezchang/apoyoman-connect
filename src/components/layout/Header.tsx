@@ -72,8 +72,8 @@ export function Header() {
       location.pathname === href
         ? "text-accent"
         : isScrolled
-          ? "text-foreground/70 hover:text-foreground"
-          : "text-white/75 hover:text-white"
+        ? "text-foreground/70 hover:text-accent"
+          : "text-white/75 hover:text-accent"
     );
 
   return (
