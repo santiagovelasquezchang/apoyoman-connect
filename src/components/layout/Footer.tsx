@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, Linkedin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import logo from "@/assets/logo.png";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -28,8 +27,14 @@ export function Footer() {
         <div className="py-12 md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link to="/" className="inline-block mb-4">
-              <img src={logo} alt="APOYOMAN" className="h-10 w-auto brightness-0 invert" />
+            <Link to="/" className="inline-flex items-center gap-1.5 mb-4">
+              <svg viewBox="0 0 40 40" fill="none" className="h-9 w-9" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 4L6 36h7l2.5-6h9l2.5 6h7L20 4zm0 12l3.5 8h-7L20 16z" fill="white" />
+                <rect x="12" y="25" width="16" height="3" rx="1" className="fill-accent" />
+              </svg>
+              <span className="font-bold text-2xl tracking-tight text-primary-foreground">
+                APOYO<span className="text-accent">MAN</span>
+              </span>
             </Link>
             <p className="text-primary-foreground/80 text-sm leading-relaxed mb-6">
               {t("footer.description")}
