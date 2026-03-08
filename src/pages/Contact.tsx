@@ -28,14 +28,9 @@ export default function Contact() {
       details: ["123 Business District", "Houston, TX 77001", "United States"],
     },
     {
-      icon: Phone,
-      title: t("contact.phone"),
-      details: ["+1 (234) 567-890", "+1 (234) 567-891"],
-    },
-    {
       icon: Mail,
       title: t("contact.email"),
-      details: ["contact@apoyoman.com", "support@apoyoman.com"],
+      details: ["info@apoyoman.com"],
     },
     {
       icon: Clock,
