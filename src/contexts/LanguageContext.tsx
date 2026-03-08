@@ -24,7 +24,7 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.tagline": "Operational Execution for Energy Projects\nin Complex Environments",
     "hero.line1": "Technical recruitment, labor management, and workforce administration",
     "hero.line2": "for oil, energy, and infrastructure projects in Venezuela.",
-    "hero.cta": "View Our Track Record",
+    "hero.cta": "View Project Experience",
     "hero.cta2": "Explore Services",
     "hero.stat1.label": "Founded",
     "hero.stat2.label": "Years in Venezuela's Energy Sector",
