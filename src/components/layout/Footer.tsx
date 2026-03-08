@@ -6,20 +6,12 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
   const { t } = useLanguage();
 
-  const footerLinks = {
-    company: [
-      { name: t("nav.home"), href: "/" },
-      { name: t("nav.services"), href: "/services" },
-      { name: t("nav.experience"), href: "/experience" },
-      { name: t("nav.about"), href: "/about" },
-      { name: t("nav.contact"), href: "/contact" },
-    ],
-    services: [
-      { name: t("footer.service1"), href: "/services#recruiting" },
-      { name: t("footer.service2"), href: "/services#outsourcing" },
-      { name: t("footer.service3"), href: "/services#payroll" },
-    ],
-  };
+  const footerLinks = [
+    { name: t("nav.home"), href: "/" },
+    { name: t("nav.experience"), href: "/experience" },
+    { name: t("nav.about"), href: "/about" },
+    { name: t("nav.contact"), href: "/contact" },
+  ];
 
   return (
     <footer className="bg-primary text-primary-foreground">
