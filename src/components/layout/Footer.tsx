@@ -6,25 +6,17 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
   const { t } = useLanguage();
 
-  const footerLinks = {
-    company: [
-      { name: t("nav.home"), href: "/" },
-      { name: t("nav.services"), href: "/services" },
-      { name: t("nav.experience"), href: "/experience" },
-      { name: t("nav.about"), href: "/about" },
-      { name: t("nav.contact"), href: "/contact" },
-    ],
-    services: [
-      { name: t("footer.service1"), href: "/services#recruiting" },
-      { name: t("footer.service2"), href: "/services#outsourcing" },
-      { name: t("footer.service3"), href: "/services#payroll" },
-    ],
-  };
+  const footerLinks = [
+    { name: t("nav.home"), href: "/" },
+    { name: t("nav.experience"), href: "/experience" },
+    { name: t("nav.about"), href: "/about" },
+    { name: t("nav.contact"), href: "/contact" },
+  ];
 
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="py-12 md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="py-12 md:py-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-flex items-center gap-1.5 mb-4">
@@ -58,26 +50,7 @@ export function Footer() {
               {t("footer.quickLinks")}
             </h4>
             <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-sm text-primary-foreground/70 hover:text-accent transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services Links */}
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4">
-              {t("footer.services")}
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.services.map((link) => (
+              {footerLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
