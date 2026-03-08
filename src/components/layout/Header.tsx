@@ -68,7 +68,7 @@ export function Header() {
 
   const linkClass = (href: string) =>
     cn(
-      "relative px-4 py-2 text-sm font-medium transition-colors",
+      "relative px-4 py-2 text-sm font-medium transition-colors duration-200",
       location.pathname === href
         ? "text-accent"
         : isScrolled
