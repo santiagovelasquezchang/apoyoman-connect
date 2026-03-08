@@ -50,7 +50,7 @@ export function Footer() {
               {t("footer.quickLinks")}
             </h4>
             <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
+              {footerLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
@@ -61,26 +61,6 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Services Links */}
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4">
-              {t("footer.services")}
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.services.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-sm text-primary-foreground/70 hover:text-accent transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           {/* Contact Info */}
           <div>
