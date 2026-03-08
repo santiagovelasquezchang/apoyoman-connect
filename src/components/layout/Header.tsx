@@ -22,8 +22,8 @@ function LogoMark({ className, color = "currentColor" }: { className?: string; c
 }
 
 function Logo({ isScrolled, size = "default" }: { isScrolled: boolean; size?: "default" | "small" }) {
-  const textSize = size === "small" ? "text-lg" : "text-2xl";
-  const iconSize = size === "small" ? "h-7 w-7" : "h-9 w-9";
+  const textSize = size === "small" ? "text-xl" : "text-[1.7rem]";
+  const iconSize = size === "small" ? "h-8 w-8" : "h-10 w-10";
   const iconColor = isScrolled ? "hsl(var(--primary))" : "white";
   const textColor = isScrolled ? "text-primary" : "text-white";
 
@@ -68,12 +68,12 @@ export function Header() {
 
   const linkClass = (href: string) =>
     cn(
-      "relative px-4 py-2 text-sm font-medium transition-colors",
+      "relative px-4 py-2 text-sm font-medium transition-colors duration-200",
       location.pathname === href
         ? "text-accent"
         : isScrolled
-          ? "text-foreground/70 hover:text-foreground"
-          : "text-white/75 hover:text-white"
+        ? "text-foreground/70 hover:text-accent"
+          : "text-white/75 hover:text-accent"
     );
 
   return (
