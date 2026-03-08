@@ -21,7 +21,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.getStarted": "Get Started",
 
     // Hero Section
-    "hero.tagline": "Operational Execution for Energy Projects\nin Complex Environments",
+    "hero.tagline": "Workforce Solutions for Oil & Gas Operations",
     "hero.line1": "Technical recruitment, labor management, and workforce administration",
     "hero.line2": "for oil, energy, and infrastructure projects in Venezuela.",
     "hero.cta": "View Project Experience",
