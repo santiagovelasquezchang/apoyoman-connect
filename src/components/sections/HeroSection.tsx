@@ -79,18 +79,7 @@ export function HeroSection() {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-[25px] opacity-0 animate-fade-in animation-delay-200">
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/60 text-sm font-semibold rounded-sm px-12 h-13 tracking-wide uppercase transition-all duration-200 hover:scale-[1.03]"
-              >
-                <Link to="/services">
-                  {t("hero.cta2")}
-                </Link>
-              </Button>
-
+            <div className="flex items-center justify-center mb-[25px] opacity-0 animate-fade-in animation-delay-200">
               <Button
                 asChild
                 size="lg"

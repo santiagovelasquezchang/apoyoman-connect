@@ -45,7 +45,6 @@ export function Header() {
 
   const leftLinks = [
     { name: t("nav.home"), href: "/" },
-    { name: t("nav.services"), href: "/services" },
     { name: t("nav.experience"), href: "/experience" },
   ];
 
