@@ -21,27 +21,28 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.getStarted": "Get Started",
 
     // Hero Section
-    "hero.tagline": "Execution Without Exposure",
-    "hero.line1": "Headhunting and staff outsourcing",
-    "hero.line2": "Workforce management for oil, energy, and infrastructure projects",
+    "hero.tagline": "Operational Execution for Energy Projects\nin Complex Environments",
+    "hero.line1": "Technical recruitment, labor management, and workforce administration",
+    "hero.line2": "for oil, energy, and infrastructure projects in Venezuela.",
     "hero.cta": "View Our Track Record",
+    "hero.cta2": "Explore Services",
     "hero.stat1.label": "Founded",
     "hero.stat2.label": "Years in Venezuela's Energy Sector",
     "hero.stat3.label": "Workers Managed at Peak",
     "hero.stat4.label": "Major Projects with PDVSA Joint Ventures",
 
     // Home - Flip Cards
-    "flip.recruiting.title": "Recruiting & Headhunting",
-    "flip.recruiting.desc": "We find the right people for your project — engineers, operators, supervisors — and get them on-site fast.",
-    "flip.outsourcing.title": "Staff Outsourcing",
-    "flip.outsourcing.desc": "We hire, manage, and run your workforce so you can focus on operations. One contract, zero headaches.",
-    "flip.payroll.title": "Payroll & Compliance",
-    "flip.payroll.desc": "We handle salaries, benefits, and all legal obligations under Venezuelan labor law. You stay compliant, always.",
+    "flip.recruiting.title": "Talent Recruitment & Deployment",
+    "flip.recruiting.desc": "Identification, selection, and mobilization of technical, operational, and administrative personnel for energy projects.",
+    "flip.outsourcing.title": "Operational Workforce Management",
+    "flip.outsourcing.desc": "End-to-end workforce administration for industrial projects, allowing operators to focus on technical execution.",
+    "flip.payroll.title": "Labor Management & Compliance",
+    "flip.payroll.desc": "Full payroll administration, benefits, and statutory obligations under Venezuelan labor law.",
 
     // Home - Services Section
-    "services.badge": "What We Do",
-    "services.title": "Three Services. One Operator.",
-    "services.description": "Everything your project needs to staff up, stay compliant, and execute — under one contract.",
+    "services.badge": "Capabilities",
+    "services.title": "Three Key Capabilities. One Operator.",
+    "services.description": "Everything a project needs to recruit, manage, and execute its workforce — under a single contract.",
     "services.viewAll": "View All Services",
 
     // Home - Quote
