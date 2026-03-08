@@ -14,19 +14,17 @@ function StatsBar() {
   const foundedValue = useCounterAnimation({ end: 1989, isVisible, duration: 2000 });
   const yearsValue = useCounterAnimation({ end: 20, suffix: "+", isVisible });
   const workersValue = useCounterAnimation({ end: 1000, suffix: "+", isVisible });
-  const projectsValue = useCounterAnimation({ end: 5, isVisible });
 
   const stats = [
     { value: foundedValue, label: t("hero.stat1.label") },
     { value: yearsValue, label: t("hero.stat2.label") },
     { value: workersValue, label: t("hero.stat3.label") },
-    { value: projectsValue, label: t("hero.stat4.label") },
   ];
 
   return (
     <section className="py-16 md:py-20 bg-background">
       <div ref={ref} className="container mx-auto px-4 md:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
+        <div className="grid grid-cols-3 gap-10 lg:gap-16">
           {stats.map((stat, index) => (
             <ScrollReveal key={stat.label} variant="fade-up" delay={index * 100}>
               <div className="text-center">
