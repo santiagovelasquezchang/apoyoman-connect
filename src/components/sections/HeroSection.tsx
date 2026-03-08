@@ -58,11 +58,6 @@ export function HeroSection() {
 
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           <div className="animate-fade-in max-w-5xl mx-auto text-center">
-            {/* Brand Name */}
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-primary-foreground leading-[0.9] mb-8 tracking-tight">
-              APOYO<span className="text-accent">MAN</span>
-            </h1>
-
             {/* Tagline */}
             <p className="text-lg md:text-xl lg:text-2xl font-semibold text-primary-foreground/90 mb-6 tracking-wide uppercase leading-snug max-w-3xl mx-auto">
               {t("hero.tagline")}
