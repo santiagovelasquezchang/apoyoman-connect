@@ -271,7 +271,7 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.tagline": "Ejecución Operativa para Proyectos Energéticos\nen Entornos Complejos",
     "hero.line1": "Reclutamiento técnico, gestión laboral y administración de workforce",
     "hero.line2": "para proyectos de petróleo, energía e infraestructura en Venezuela.",
-    "hero.cta": "Ver Nuestra Trayectoria",
+    "hero.cta": "Ver Experiencia de Proyectos",
     "hero.cta2": "Explorar Servicios",
     "hero.stat1.label": "Fundada",
     "hero.stat2.label": "Años en el Sector Energético de Venezuela",

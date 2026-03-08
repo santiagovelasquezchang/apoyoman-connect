@@ -22,8 +22,8 @@ function LogoMark({ className, color = "currentColor" }: { className?: string; c
 }
 
 function Logo({ isScrolled, size = "default" }: { isScrolled: boolean; size?: "default" | "small" }) {
-  const textSize = size === "small" ? "text-lg" : "text-2xl";
-  const iconSize = size === "small" ? "h-7 w-7" : "h-9 w-9";
+  const textSize = size === "small" ? "text-xl" : "text-[1.7rem]";
+  const iconSize = size === "small" ? "h-8 w-8" : "h-10 w-10";
   const iconColor = isScrolled ? "hsl(var(--primary))" : "white";
   const textColor = isScrolled ? "text-primary" : "text-white";
 
