@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, Linkedin } from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Footer() {
