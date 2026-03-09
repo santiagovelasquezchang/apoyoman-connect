@@ -46,22 +46,39 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission (replace with actual API call later)
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const { error } = await supabase.from("leads").insert({
+        full_name: formData.name,
+        email: formData.email,
+        company: formData.company || null,
+        message: formData.message || null,
+        source_page: "contact",
+      });
 
-    toast({
-      title: t("contactPage.successTitle"),
-      description: t("contactPage.successDescription"),
-    });
+      if (error) throw error;
 
-    setFormData({
-      name: "",
-      email: "",
-      company: "",
-      phone: "",
-      message: "",
-    });
-    setIsSubmitting(false);
+      toast({
+        title: t("contactPage.successTitle"),
+        description: t("contactPage.successDescription"),
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        phone: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Error",
+        description: "Hubo un error al enviar el mensaje. Intenta de nuevo.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
