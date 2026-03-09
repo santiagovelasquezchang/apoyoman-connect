@@ -1,5 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -22,11 +22,6 @@ export default function Contact() {
   });
 
   const contactInfo = [
-    {
-      icon: MapPin,
-      title: t("contact.office"),
-      details: ["123 Business District", "Houston, TX 77001", "United States"],
-    },
     {
       icon: Mail,
       title: t("contact.email"),
