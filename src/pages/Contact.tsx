@@ -23,11 +23,6 @@ export default function Contact() {
 
   const contactInfo = [
     {
-      icon: MapPin,
-      title: t("contact.office"),
-      details: ["123 Business District", "Houston, TX 77001", "United States"],
-    },
-    {
       icon: Mail,
       title: t("contact.email"),
       details: ["info@apoyoman.com"],
