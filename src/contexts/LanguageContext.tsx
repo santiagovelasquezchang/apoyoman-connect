@@ -18,6 +18,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.experience": "Experience",
     "nav.about": "About",
     "nav.contact": "Contact",
+    "nav.join": "Join Us",
     "nav.getStarted": "Get Started",
 
     // Hero Section
@@ -265,6 +266,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.experience": "Experiencia",
     "nav.about": "Nosotros",
     "nav.contact": "Contacto",
+    "nav.join": "Únete",
     "nav.getStarted": "Comenzar",
 
     // Hero Section
