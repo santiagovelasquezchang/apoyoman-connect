@@ -171,7 +171,7 @@ export function Header() {
               ))}
               <div className="px-4 pt-3">
                 <Button asChild size="sm" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-lg">
-                  <Link to="/contact">{t("nav.getStarted")}</Link>
+                  <Link to="/join">{t("nav.join")}</Link>
                 </Button>
               </div>
             </div>
