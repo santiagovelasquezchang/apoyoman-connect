@@ -6,74 +6,57 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Briefcase, Shield, Award } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroBg from "@/assets/hero-bg.jpg";
 
-const REGIONS = [
-  "Zulia",
-  "Falcón",
-  "Carabobo",
-  "Anzoátegui",
-  "Monagas",
-  "Caracas / Miranda",
-  "Other Venezuela",
-  "International (willing to relocate)",
+const REGION_KEYS = [
+  "join.region.zulia",
+  "join.region.falcon",
+  "join.region.carabobo",
+  "join.region.anzoategui",
+  "join.region.monagas",
+  "join.region.caracas",
+  "join.region.otherVe",
+  "join.region.international",
 ];
 
-const DISCIPLINES = [
-  "Drilling & Well Services",
-  "Production Operations",
-  "Reservoir Engineering",
-  "Process / Chemical Engineering",
-  "Mechanical / Maintenance",
-  "Electrical / Instrumentation",
-  "HSE (Health, Safety & Environment)",
-  "Construction & Civil Works",
-  "Pipeline & Transportation",
-  "Project Management",
-  "Logistics & Supply Chain",
-  "Administrative / Finance",
-  "IT / Systems",
-  "Other",
+const DISCIPLINE_KEYS = [
+  "join.disc.drilling",
+  "join.disc.production",
+  "join.disc.reservoir",
+  "join.disc.process",
+  "join.disc.mechanical",
+  "join.disc.electrical",
+  "join.disc.hse",
+  "join.disc.construction",
+  "join.disc.pipeline",
+  "join.disc.projectMgmt",
+  "join.disc.logistics",
+  "join.disc.admin",
+  "join.disc.it",
+  "join.disc.other",
 ];
 
-const EXPERIENCE_LEVELS = [
-  "3–5 years",
-  "5–10 years",
-  "10–15 years",
-  "15–20 years",
-  "20+ years",
+const EXPERIENCE_KEYS = [
+  "join.exp.3-5",
+  "join.exp.5-10",
+  "join.exp.10-15",
+  "join.exp.15-20",
+  "join.exp.20+",
 ];
 
-const AVAILABILITY_OPTIONS = [
-  "Immediately available",
-  "Available within 30 days",
-  "Available within 60 days",
-  "Currently employed — open to opportunities",
+const AVAILABILITY_KEYS = [
+  "join.avail.immediate",
+  "join.avail.30",
+  "join.avail.60",
+  "join.avail.employed",
 ];
 
-const QUALIFICATION_OPTIONS = [
-  "Prior PDVSA / Faja del Orinoco experience",
-  "International oil company experience",
-  "Fluent in Spanish",
-  "Fluent in English",
-];
-
-const WHY_CARDS = [
-  {
-    icon: Briefcase,
-    title: "Access to Major Projects",
-    text: "Be first in line as international oil companies resume operations in Venezuela under new OFAC authorizations.",
-  },
-  {
-    icon: Shield,
-    title: "Full Compliance & Protection",
-    text: "We handle payroll, benefits, and Venezuelan labor law compliance — so you're fully protected from day one.",
-  },
-  {
-    icon: Award,
-    title: "Proven Operations Partner",
-    text: "Our legacy includes managing workforces for ConocoPhillips, ChevronTexaco, TotalEnergies, and Statoil projects.",
-  },
+const QUALIFICATION_KEYS = [
+  "join.qual.pdvsa",
+  "join.qual.international",
+  "join.qual.spanish",
+  "join.qual.english",
 ];
 
 interface FormData {
@@ -107,24 +90,25 @@ const initialFormData: FormData = {
 };
 
 export default function Join() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [submitted, setSubmitted] = useState(false);
 
-  const toggleDiscipline = (d: string) => {
+  const toggleDiscipline = (key: string) => {
     setFormData((prev) => ({
       ...prev,
-      disciplines: prev.disciplines.includes(d)
-        ? prev.disciplines.filter((x) => x !== d)
-        : [...prev.disciplines, d],
+      disciplines: prev.disciplines.includes(key)
+        ? prev.disciplines.filter((x) => x !== key)
+        : [...prev.disciplines, key],
     }));
   };
 
-  const toggleQualification = (q: string) => {
+  const toggleQualification = (key: string) => {
     setFormData((prev) => ({
       ...prev,
-      qualifications: prev.qualifications.includes(q)
-        ? prev.qualifications.filter((x) => x !== q)
-        : [...prev.qualifications, q],
+      qualifications: prev.qualifications.includes(key)
+        ? prev.qualifications.filter((x) => x !== key)
+        : [...prev.qualifications, key],
     }));
   };
 
@@ -163,18 +147,16 @@ export default function Join() {
                 <CheckCircle className="w-10 h-10 text-accent" />
               </div>
               <h1 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-                Registration Received
+                {t("join.confirmTitle")}
               </h1>
               <p className="text-primary-foreground/80 text-lg mb-8">
-                Thank you for your interest in joining APOYOMAN's workforce
-                network. Our team will review your profile and contact you when
-                opportunities matching your experience become available.
+                {t("join.confirmText")}
               </p>
               <Button
                 onClick={handleReset}
                 className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold px-8 h-12"
               >
-                Register Another Professional
+                {t("join.confirmButton")}
               </Button>
             </div>
           </div>
@@ -182,6 +164,12 @@ export default function Join() {
       </Layout>
     );
   }
+
+  const whyCards = [
+    { icon: Briefcase, titleKey: "join.card1.title", textKey: "join.card1.text" },
+    { icon: Shield, titleKey: "join.card2.title", textKey: "join.card2.text" },
+    { icon: Award, titleKey: "join.card3.title", textKey: "join.card3.text" },
+  ];
 
   return (
     <Layout>
@@ -193,17 +181,14 @@ export default function Join() {
         </div>
         <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
           <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4 border border-accent/30 px-4 py-1.5 rounded-sm">
-            TALENT NETWORK
+            {t("join.badge")}
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-            Join Venezuela's Premier{" "}
-            <span className="text-accent">Oil & Gas Workforce</span>
+            {t("join.title")}{" "}
+            <span className="text-accent">{t("join.titleAccent")}</span>
           </h1>
           <p className="text-lg md:text-xl text-primary-foreground/80 max-w-3xl mx-auto">
-            APOYOMAN is rebuilding its talent database for upcoming projects with
-            international oil companies operating in Venezuela. If you have
-            experience in the energy sector, register below to be considered for
-            temporary and contract positions.
+            {t("join.subtitle")}
           </p>
         </div>
       </section>
@@ -213,26 +198,26 @@ export default function Join() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-2">
-              Benefits
+              {t("join.whyBadge")}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Why Register With Us
+              {t("join.whyTitle")}
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            {WHY_CARDS.map((card) => (
+            {whyCards.map((card) => (
               <div
-                key={card.title}
+                key={card.titleKey}
                 className="bg-primary rounded-lg border-t-4 border-t-accent border border-primary/50 p-8"
               >
                 <div className="p-3 rounded-lg bg-accent/10 w-fit mb-5">
                   <card.icon className="h-6 w-6 text-accent" />
                 </div>
                 <h3 className="text-xl font-bold text-primary-foreground mb-3">
-                  {card.title}
+                  {t(card.titleKey)}
                 </h3>
                 <p className="text-primary-foreground/70 leading-relaxed">
-                  {card.text}
+                  {t(card.textKey)}
                 </p>
               </div>
             ))}
@@ -246,10 +231,10 @@ export default function Join() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-2">
-                Registration
+                {t("join.regBadge")}
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Complete Your Profile
+                {t("join.regTitle")}
               </h2>
             </div>
 
@@ -259,13 +244,13 @@ export default function Join() {
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-8 w-1 bg-accent rounded-full" />
                   <h3 className="text-xl font-bold text-foreground">
-                    Personal Information
+                    {t("join.sectionA")}
                   </h3>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">
-                      First Name <span className="text-accent">*</span>
+                      {t("join.firstName")} <span className="text-accent">*</span>
                     </Label>
                     <Input
                       id="firstName"
@@ -279,7 +264,7 @@ export default function Join() {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="lastName">
-                      Last Name <span className="text-accent">*</span>
+                      {t("join.lastName")} <span className="text-accent">*</span>
                     </Label>
                     <Input
                       id="lastName"
@@ -293,7 +278,7 @@ export default function Join() {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email">
-                      Email <span className="text-accent">*</span>
+                      {t("join.email")} <span className="text-accent">*</span>
                     </Label>
                     <Input
                       id="email"
@@ -308,7 +293,7 @@ export default function Join() {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone">
-                      Phone <span className="text-accent">*</span>
+                      {t("join.phone")} <span className="text-accent">*</span>
                     </Label>
                     <Input
                       id="phone"
@@ -323,10 +308,10 @@ export default function Join() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="country">Country of Residence</Label>
+                    <Label htmlFor="country">{t("join.country")}</Label>
                     <Input
                       id="country"
-                      placeholder="Venezuela"
+                      placeholder={t("join.countryPlaceholder")}
                       value={formData.country}
                       onChange={(e) =>
                         setFormData((p) => ({ ...p, country: e.target.value }))
@@ -335,7 +320,7 @@ export default function Join() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="region">Preferred Work Region</Label>
+                    <Label htmlFor="region">{t("join.region")}</Label>
                     <select
                       id="region"
                       value={formData.region}
@@ -344,10 +329,10 @@ export default function Join() {
                       }
                       className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                     >
-                      <option value="">Select region...</option>
-                      {REGIONS.map((r) => (
-                        <option key={r} value={r}>
-                          {r}
+                      <option value="">{t("join.regionPlaceholder")}</option>
+                      {REGION_KEYS.map((key) => (
+                        <option key={key} value={key}>
+                          {t(key)}
                         </option>
                       ))}
                     </select>
@@ -367,36 +352,36 @@ export default function Join() {
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-8 w-1 bg-accent rounded-full" />
                   <h3 className="text-xl font-bold text-foreground">
-                    Professional Experience
+                    {t("join.sectionB")}
                   </h3>
                 </div>
 
                 {/* Disciplines */}
                 <div className="mb-6">
                   <Label className="mb-3 block">
-                    Area(s) of Expertise <span className="text-accent">*</span>
+                    {t("join.disciplines")} <span className="text-accent">*</span>
                   </Label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
-                    {DISCIPLINES.map((d) => (
+                    {DISCIPLINE_KEYS.map((key) => (
                       <button
-                        key={d}
+                        key={key}
                         type="button"
-                        onClick={() => toggleDiscipline(d)}
+                        onClick={() => toggleDiscipline(key)}
                         className={cn(
                           "px-4 py-2.5 rounded-lg border text-sm font-medium transition-all text-left",
-                          formData.disciplines.includes(d)
+                          formData.disciplines.includes(key)
                             ? "bg-accent/10 border-accent text-accent"
                             : "bg-muted/50 border-border text-foreground/70 hover:border-accent/50 hover:text-foreground"
                         )}
                       >
-                        {d}
+                        {t(key)}
                       </button>
                     ))}
                   </div>
-                  {formData.disciplines.includes("Other") && (
+                  {formData.disciplines.includes("join.disc.other") && (
                     <div className="mt-3">
                       <Input
-                        placeholder="Please specify your area of expertise"
+                        placeholder={t("join.otherPlaceholder")}
                         value={formData.otherDiscipline}
                         onChange={(e) =>
                           setFormData((p) => ({
@@ -413,7 +398,7 @@ export default function Join() {
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div className="space-y-2">
                     <Label htmlFor="experience">
-                      Years in Oil & Gas <span className="text-accent">*</span>
+                      {t("join.experience")} <span className="text-accent">*</span>
                     </Label>
                     <select
                       id="experience"
@@ -426,16 +411,16 @@ export default function Join() {
                       }
                       className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                     >
-                      <option value="">Select experience level...</option>
-                      {EXPERIENCE_LEVELS.map((l) => (
-                        <option key={l} value={l}>
-                          {l}
+                      <option value="">{t("join.experiencePlaceholder")}</option>
+                      {EXPERIENCE_KEYS.map((key) => (
+                        <option key={key} value={key}>
+                          {t(key)}
                         </option>
                       ))}
                     </select>
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="availability">Availability</Label>
+                    <Label htmlFor="availability">{t("join.availability")}</Label>
                     <select
                       id="availability"
                       value={formData.availability}
@@ -447,10 +432,10 @@ export default function Join() {
                       }
                       className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                     >
-                      <option value="">Select availability...</option>
-                      {AVAILABILITY_OPTIONS.map((a) => (
-                        <option key={a} value={a}>
-                          {a}
+                      <option value="">{t("join.availabilityPlaceholder")}</option>
+                      {AVAILABILITY_KEYS.map((key) => (
+                        <option key={key} value={key}>
+                          {t(key)}
                         </option>
                       ))}
                     </select>
@@ -470,25 +455,25 @@ export default function Join() {
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-8 w-1 bg-accent rounded-full" />
                   <h3 className="text-xl font-bold text-foreground">
-                    Additional Qualifications
+                    {t("join.sectionC")}
                   </h3>
                 </div>
 
                 <div className="mb-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                    {QUALIFICATION_OPTIONS.map((q) => (
+                    {QUALIFICATION_KEYS.map((key) => (
                       <button
-                        key={q}
+                        key={key}
                         type="button"
-                        onClick={() => toggleQualification(q)}
+                        onClick={() => toggleQualification(key)}
                         className={cn(
                           "px-4 py-2.5 rounded-lg border text-sm font-medium transition-all text-left",
-                          formData.qualifications.includes(q)
+                          formData.qualifications.includes(key)
                             ? "bg-accent/10 border-accent text-accent"
                             : "bg-muted/50 border-border text-foreground/70 hover:border-accent/50 hover:text-foreground"
                         )}
                       >
-                        {q}
+                        {t(key)}
                       </button>
                     ))}
                   </div>
@@ -496,13 +481,13 @@ export default function Join() {
 
                 <div className="space-y-2">
                   <Label htmlFor="summary">
-                    Brief Professional Summary{" "}
-                    <span className="text-muted-foreground">(optional)</span>
+                    {t("join.summaryLabel")}{" "}
+                    <span className="text-muted-foreground">{t("join.summaryOptional")}</span>
                   </Label>
                   <Textarea
                     id="summary"
                     rows={4}
-                    placeholder="Briefly describe your relevant experience, key projects, and skills. Example: '15 years in production operations across Zulia and Anzoátegui. Managed field teams for Petrozuata upgrader maintenance campaigns.'"
+                    placeholder={t("join.summaryPlaceholder")}
                     value={formData.summary}
                     onChange={(e) =>
                       setFormData((p) => ({ ...p, summary: e.target.value }))
@@ -524,18 +509,15 @@ export default function Join() {
                       : "bg-muted text-muted-foreground cursor-not-allowed opacity-60"
                   )}
                 >
-                  SUBMIT REGISTRATION →
+                  {t("join.submit")}
                 </Button>
               </div>
 
               {/* Privacy Note */}
               <div className="mt-8 border-l-4 border-l-accent bg-primary/5 rounded-r-lg p-5">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  <strong className="text-foreground">Privacy Note:</strong>{" "}
-                  Your information will be stored securely in APOYOMAN's talent
-                  database and used exclusively for matching you with relevant
-                  project opportunities in the Venezuelan energy sector. We do
-                  not share your data with third parties without your consent.
+                  <strong className="text-foreground">{t("join.privacy")}</strong>{" "}
+                  {t("join.privacyText")}
                 </p>
               </div>
             </form>
