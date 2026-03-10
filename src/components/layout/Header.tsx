@@ -53,6 +53,8 @@ export function Header() {
     { name: t("nav.contact"), href: "/contact" },
   ];
 
+  const joinLink = { name: t("nav.join"), href: "/join" };
+
   const allLinks = [...leftLinks, ...rightLinks];
 
   useEffect(() => {
