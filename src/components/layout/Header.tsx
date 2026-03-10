@@ -144,7 +144,7 @@ export function Header() {
                   size="sm"
                   className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold rounded-lg text-sm h-9 px-5"
                 >
-                  <Link to="/contact">{t("nav.getStarted")}</Link>
+                  <Link to="/join">{t("nav.join")}</Link>
                 </Button>
               </div>
             </div>
