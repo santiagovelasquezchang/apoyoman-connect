@@ -141,11 +141,28 @@ export default function Join() {
   });
 
   const sendToGoogleSheets = async (payload: Record<string, string>) => {
+    const sheetsPayload = {
+      firstName: payload.firstName,
+      lastName: payload.lastName,
+      email: payload.email,
+      phone: payload.phone,
+      country: payload.country,
+      region: payload.region,
+      disciplines: formData.disciplines.map((k) => t(k)),
+      otherDiscipline: payload.otherDiscipline,
+      experienceLevel: payload.experienceLevel,
+      availability: payload.availability,
+      pdvsaExperience: formData.qualifications.includes("join.qual.pdvsa"),
+      internationalOilExperience: formData.qualifications.includes("join.qual.international"),
+      spanishFluent: formData.qualifications.includes("join.qual.spanish"),
+      englishFluent: formData.qualifications.includes("join.qual.english"),
+      summary: payload.summary,
+    };
     await fetch(ENV.GOOGLE_SHEETS_WEBHOOK, {
       method: "POST",
       mode: "no-cors",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(sheetsPayload),
     });
   };
 
