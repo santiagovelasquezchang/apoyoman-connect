@@ -295,6 +295,8 @@ const translations: Record<Language, Record<string, string>> = {
     "join.summaryOptional": "(optional)",
     "join.summaryPlaceholder": "Briefly describe your relevant experience, key projects, and skills. Example: '15 years in production operations across Zulia and Anzoátegui. Managed field teams for Petrozuata upgrader maintenance campaigns.'",
     "join.submit": "SUBMIT REGISTRATION →",
+    "join.submitting": "Submitting...",
+    "join.submitError": "Error submitting form. Please try again.",
     "join.confirmTitle": "Registration Received",
     "join.confirmText": "Thank you for your interest in joining APOYOMAN's workforce network. Our team will review your profile and contact you when opportunities matching your experience become available.",
     "join.confirmButton": "Register Another Professional",
