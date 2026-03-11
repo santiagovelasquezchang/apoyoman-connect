@@ -627,6 +627,8 @@ const translations: Record<Language, Record<string, string>> = {
     "join.summaryOptional": "(opcional)",
     "join.summaryPlaceholder": "Describe brevemente tu experiencia relevante, proyectos clave y habilidades. Ejemplo: '15 años en operaciones de producción en Zulia y Anzoátegui. Gestión de equipos de campo para campañas de mantenimiento del mejorador Petrozuata.'",
     "join.submit": "ENVIAR REGISTRO →",
+    "join.submitting": "Enviando...",
+    "join.submitError": "Error al enviar el formulario. Por favor intenta de nuevo.",
     "join.confirmTitle": "Registro Recibido",
     "join.confirmText": "Gracias por tu interés en unirte a la red de fuerza laboral de APOYOMAN. Nuestro equipo revisará tu perfil y te contactará cuando haya oportunidades que coincidan con tu experiencia.",
     "join.confirmButton": "Registrar Otro Profesional",
