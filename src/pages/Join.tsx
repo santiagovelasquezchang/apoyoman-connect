@@ -4,9 +4,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Briefcase, Shield, Award } from "lucide-react";
+import { CheckCircle, Briefcase, Shield, Award, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { ENV } from "@/config/env";
+import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const REGION_KEYS = [
