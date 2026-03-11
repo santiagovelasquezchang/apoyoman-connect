@@ -96,6 +96,7 @@ export default function Join() {
   const { t } = useLanguage();
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const toggleDiscipline = (key: string) => {
     setFormData((prev) => ({
@@ -123,12 +124,68 @@ export default function Join() {
     formData.disciplines.length > 0 &&
     formData.experienceLevel;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const buildPayload = () => ({
+    firstName: formData.firstName.trim(),
+    lastName: formData.lastName.trim(),
+    email: formData.email.trim(),
+    phone: formData.phone.trim(),
+    country: formData.country.trim(),
+    region: formData.region ? t(formData.region) : "",
+    disciplines: formData.disciplines.map((k) => t(k)).join(", "),
+    otherDiscipline: formData.otherDiscipline.trim(),
+    experienceLevel: formData.experienceLevel ? t(formData.experienceLevel) : "",
+    availability: formData.availability ? t(formData.availability) : "",
+    qualifications: formData.qualifications.map((k) => t(k)).join(", "),
+    summary: formData.summary.trim(),
+    submittedAt: new Date().toISOString(),
+  });
+
+  const sendToGoogleSheets = async (payload: Record<string, string>) => {
+    await fetch(ENV.GOOGLE_SHEETS_WEBHOOK, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+  };
+
+  const sendConfirmationEmail = async (payload: Record<string, string>) => {
+    await emailjs.send(
+      ENV.EMAILJS_SERVICE_ID,
+      ENV.EMAILJS_TEMPLATE_ID,
+      {
+        to_email: payload.email,
+        from_name: "APOYOMAN",
+        first_name: payload.firstName,
+        last_name: payload.lastName,
+        disciplines: payload.disciplines,
+        experience: payload.experienceLevel,
+      },
+      ENV.EMAILJS_PUBLIC_KEY
+    );
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!isValid) return;
-    console.log("Talent Registration Data:", formData);
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (!isValid || submitting) return;
+
+    setSubmitting(true);
+    const payload = buildPayload();
+
+    try {
+      await Promise.allSettled([
+        sendToGoogleSheets(payload),
+        sendConfirmationEmail(payload),
+      ]);
+
+      setSubmitted(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (err) {
+      console.error("Submission error:", err);
+      toast.error(t("join.submitError") || "Error submitting form. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleReset = () => {
