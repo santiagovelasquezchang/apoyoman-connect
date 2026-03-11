@@ -561,15 +561,22 @@ export default function Join() {
               <div className="text-center pt-8">
                 <Button
                   type="submit"
-                  disabled={!isValid}
+                  disabled={!isValid || submitting}
                   className={cn(
                     "h-13 px-10 text-base font-bold rounded-lg transition-all",
-                    isValid
+                    isValid && !submitting
                       ? "gradient-accent text-accent-foreground hover:opacity-90"
                       : "bg-muted text-muted-foreground cursor-not-allowed opacity-60"
                   )}
                 >
-                  {t("join.submit")}
+                  {submitting ? (
+                    <span className="flex items-center gap-2">
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                      {t("join.submitting")}
+                    </span>
+                  ) : (
+                    t("join.submit")
+                  )}
                 </Button>
               </div>
 
