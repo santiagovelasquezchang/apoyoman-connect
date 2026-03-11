@@ -144,7 +144,7 @@ export default function Join() {
     await fetch(ENV.GOOGLE_SHEETS_WEBHOOK, {
       method: "POST",
       mode: "no-cors",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
       body: JSON.stringify(payload),
     });
   };
